@@ -9,13 +9,12 @@ package cards;
  *
  * @author Joshua
  */
-public class RefugeeCard extends Card{
+public class MedkitCard extends Card{
     
-    public RefugeeCard(){
-        search = 0;
-        food = 0;
-        population = 1;   
+    public MedkitCard(){
+        medicine = 2;
         
-        type = CardType.TRIBE;
+        type = CardType.MEDS;
     }
+    
 }

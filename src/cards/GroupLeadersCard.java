@@ -18,5 +18,11 @@ public class GroupLeadersCard extends Card{
         augSearch = 2;
         augFood = 2;
         augCombat = 2;
+        
+        type = CardType.TRIBE;
     }
+    
+    /**
+     * TODO: Ability: Can be used with Group Leaders or tools. (Stackable)
+     */
 }

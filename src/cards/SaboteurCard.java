@@ -9,13 +9,17 @@ package cards;
  *
  * @author Joshua
  */
-public class RefugeeCard extends Card{
+public class SaboteurCard extends Card implements SpecialAction{
     
-    public RefugeeCard(){
-        search = 0;
-        food = 0;
-        population = 1;   
+    SaboteurCard(){
+        search = 1;
+        combat = 1;
+        population = 1;
         
         type = CardType.TRIBE;
     }
+    
+    /**
+     * TODO: Ability: Disarm one tool card, forcing it to be discarded
+     */
 }

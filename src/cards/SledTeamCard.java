@@ -9,13 +9,15 @@ package cards;
  *
  * @author Joshua
  */
-public class RefugeeCard extends Card{
+public class SledTeamCard extends Card{
     
-    public RefugeeCard(){
-        search = 0;
-        food = 0;
-        population = 1;   
+    public SledTeamCard(){
+        draw = 2;
+        combat  = 1;
+        population = 2;
         
         type = CardType.TRIBE;
+        
+        contested = true;
     }
 }

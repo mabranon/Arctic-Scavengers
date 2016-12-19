@@ -9,13 +9,17 @@ package cards;
  *
  * @author Joshua
  */
-public class RefugeeCard extends Card{
+public class SniperTeamCard extends Card implements SpecialAction{
     
-    public RefugeeCard(){
-        search = 0;
-        food = 0;
-        population = 1;   
+    public SniperTeamCard(){
+ 
+        population = 2;
         
         type = CardType.TRIBE;
     }
+    
+    /**
+     * TODO: Ability: Snipe one tribe member forcing it to be discarded
+     */
+    
 }

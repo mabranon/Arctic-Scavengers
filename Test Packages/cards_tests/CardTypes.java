@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cards;
+package cards_tests;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import cards.*;
-
 /**
  *
  * @author Michael Branon

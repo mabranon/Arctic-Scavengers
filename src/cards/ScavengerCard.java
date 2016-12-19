@@ -17,5 +17,7 @@ public class ScavengerCard extends Card{
         food = 1;
         combat = 1;
         population = 1;   
+        
+        type = CardType.TRIBE;
     }
 }

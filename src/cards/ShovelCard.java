@@ -9,13 +9,13 @@ package cards;
  *
  * @author Joshua
  */
-public class RefugeeCard extends Card{
+public class ShovelCard extends Card{
     
-    public RefugeeCard(){
-        search = 0;
-        food = 0;
-        population = 1;   
+    public ShovelCard(){
+        augSearch = 2;
+        augCombat = 1;
         
-        type = CardType.TRIBE;
+        type = CardType.TOOL;
     }
+    
 }

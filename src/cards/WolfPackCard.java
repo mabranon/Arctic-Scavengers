@@ -9,13 +9,15 @@ package cards;
  *
  * @author Joshua
  */
-public class RefugeeCard extends Card{
+public class WolfPackCard extends Card{
     
-    public RefugeeCard(){
-        search = 0;
-        food = 0;
-        population = 1;   
+    public WolfPackCard(){
+        augFood = 3;
+        augCombat = 2;
         
-        type = CardType.TRIBE;
+        type = CardType.TOOL;
+        
+        contested = true;
     }
+    
 }

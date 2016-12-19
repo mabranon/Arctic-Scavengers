@@ -9,33 +9,41 @@ package cards;
  *
  * @author Joshua
  */
-abstract class Card {
+public abstract class Card {
     Integer draw;
     Integer search;
     Integer food;
     Integer medicine;
     Integer combat;
     Integer population;
-    
+
     Integer augDraw;
     Integer augSearch;
     Integer augFood;
     Integer augMedicine;
     Integer augCombat;
     
-    public Card(){
+    CardType type;
+    
+    boolean contested;
+
+    public Card() {
         draw = null;
         search = null;
         food = null;
         medicine = null;
         combat = null;
-        population = null;   
-        
+        population = null;
+
         augDraw = null;
         augSearch = null;
         augFood = null;
         augMedicine = null;
         augCombat = null;
+        
+        type = null;
+        
+        contested = false;
     }
 
     /**
@@ -113,5 +121,19 @@ abstract class Card {
      */
     public Integer getAugCombat() {
         return augCombat;
+    }
+
+    /**
+     * @return the type
+     */
+    public CardType getType() {
+        return type;
+    }
+
+    /**
+     * @return the contested
+     */
+    public boolean isContested() {
+        return contested;
     }
 }

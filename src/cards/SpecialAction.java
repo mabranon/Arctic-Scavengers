@@ -9,13 +9,5 @@ package cards;
  *
  * @author Joshua
  */
-public class RefugeeCard extends Card{
-    
-    public RefugeeCard(){
-        search = 0;
-        food = 0;
-        population = 1;   
-        
-        type = CardType.TRIBE;
-    }
+public interface SpecialAction {
 }

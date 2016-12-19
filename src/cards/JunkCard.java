@@ -9,13 +9,10 @@ package cards;
  *
  * @author Joshua
  */
-public class RefugeeCard extends Card{
+public class JunkCard {
     
-    public RefugeeCard(){
-        search = 0;
-        food = 0;
-        population = 1;   
-        
-        type = CardType.TRIBE;
-    }
+    /**
+     * Useless card that does nothing
+     */
+    
 }

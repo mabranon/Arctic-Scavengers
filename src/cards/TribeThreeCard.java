@@ -9,13 +9,16 @@ package cards;
  *
  * @author Joshua
  */
-public class RefugeeCard extends Card{
+public class TribeThreeCard extends Card{
     
-    public RefugeeCard(){
-        search = 0;
+    public TribeThreeCard(){
         food = 0;
-        population = 1;   
+        combat = 0;
+        population = 3;
         
         type = CardType.TRIBE;
+        
+        contested = true;
     }
+    
 }

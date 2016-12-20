@@ -13,7 +13,7 @@ import cards.*;
  *
  * @author Michael Branon
  */
-public class CardTypes {
+public class CardTypesTests {
     
     @Test
     public void verifyRefugee(){

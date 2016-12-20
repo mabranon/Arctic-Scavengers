@@ -11,7 +11,7 @@ package cards;
  */
 public class SaboteurCard extends Card implements SpecialAction{
     
-    SaboteurCard(){
+    public SaboteurCard(){
         search = 1;
         combat = 1;
         population = 1;

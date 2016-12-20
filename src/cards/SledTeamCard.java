@@ -17,6 +17,7 @@ public class SledTeamCard extends Card{
         population = 2;
         
         type = CardType.TRIBE;
+        name = CardName.SLED_TEAM;
         
         contested = true;
     }

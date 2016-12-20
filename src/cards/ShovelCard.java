@@ -16,6 +16,7 @@ public class ShovelCard extends Card{
         augCombat = 1;
         
         type = CardType.TOOL;
+        name = CardName.SHOVEL;
     }
     
 }

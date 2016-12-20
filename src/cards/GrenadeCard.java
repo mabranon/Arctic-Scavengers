@@ -15,6 +15,7 @@ public class GrenadeCard extends Card{
         augCombat = 3;
         
         type = CardType.TOOL;
+        name = CardName.GRENADE;
         
         contested = true;
     }

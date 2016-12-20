@@ -16,6 +16,7 @@ public class PickaxeCard extends Card{
         augCombat = 2;
         
         type = CardType.TOOL;
+        name = CardName.PICKAXE;
     }
     
 }

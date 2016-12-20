@@ -17,5 +17,6 @@ public class ScoutCard extends Card{
         population = 1;
         
         type = CardType.TRIBE;
+        name = CardName.SCOUT;
     }
 }

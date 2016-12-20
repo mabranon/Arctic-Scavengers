@@ -9,10 +9,10 @@ package cards;
  *
  * @author Joshua
  */
-public class JunkCard {
+public class JunkCard extends Card{
     
-    /**
-     * Useless card that does nothing
-     */
+    public JunkCard(){
+        name = CardName.JUNK;
+    }
     
 }

@@ -20,6 +20,7 @@ public class GroupLeadersCard extends Card{
         augCombat = 2;
         
         type = CardType.TRIBE;
+        name = CardName.GROUP_LEADERS;
     }
     
     /**

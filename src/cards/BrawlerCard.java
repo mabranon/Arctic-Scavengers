@@ -16,6 +16,7 @@ public class BrawlerCard extends Card{
         combat = 2;
         population = 1;
         
+        name = CardName.BRAWLER;
         type = CardType.TRIBE;
     }
     

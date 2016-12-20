@@ -16,6 +16,7 @@ public class NetCard extends Card{
         augCombat = 1; 
         
         type = CardType.TOOL;
+        name = CardName.NET;
     }
     
 }

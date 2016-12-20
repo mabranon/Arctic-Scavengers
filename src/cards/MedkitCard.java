@@ -15,6 +15,7 @@ public class MedkitCard extends Card{
         medicine = 2;
         
         type = CardType.MEDS;
+        name = CardName.MEDKIT;
     }
     
 }

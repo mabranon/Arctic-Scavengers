@@ -17,6 +17,7 @@ public class SaboteurCard extends Card implements SpecialAction{
         population = 1;
         
         type = CardType.TRIBE;
+        name = CardName.SABOTEUR;
     }
     
     /**

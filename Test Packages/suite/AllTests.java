@@ -19,6 +19,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
     board_tests.MarketTests.class,
+    board_tests.JunkyardTests.class,
     cards_tests.CardTypesTests.class
 })
 public class AllTests {

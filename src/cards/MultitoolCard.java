@@ -17,6 +17,7 @@ public class MultitoolCard extends Card{
         augCombat = 1;
         
         type = CardType.TOOL;
+        name = CardName.MULTITOOL;
     }
     
 }

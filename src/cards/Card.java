@@ -24,6 +24,7 @@ public abstract class Card {
     Integer augCombat;
     
     CardType type;
+    CardName name;
     
     boolean contested;
 
@@ -42,96 +43,104 @@ public abstract class Card {
         augCombat = null;
         
         type = null;
+        name = null;
         
         contested = false;
     }
 
     /**
-     * @return the draw
+     * @return the draw value of the card
      */
     public Integer getDraw() {
         return draw;
     }
 
     /**
-     * @return the search
+     * @return the search value of the card
      */
     public Integer getSearch() {
         return search;
     }
 
     /**
-     * @return the food
+     * @return the food value of the card
      */
     public Integer getFood() {
         return food;
     }
 
     /**
-     * @return the medicine
+     * @return the medicine value of the card
      */
     public Integer getMedicine() {
         return medicine;
     }
 
     /**
-     * @return the combat
+     * @return the combat value of the card
      */
     public Integer getCombat() {
         return combat;
     }
 
     /**
-     * @return the population
+     * @return the population value of the card
      */
     public Integer getPopulation() {
         return population;
     }
 
     /**
-     * @return the augDraw
+     * @return the augDraw value of the card
      */
     public Integer getAugDraw() {
         return augDraw;
     }
 
     /**
-     * @return the augSearch
+     * @return the augSearch value of the card
      */
     public Integer getAugSearch() {
         return augSearch;
     }
 
     /**
-     * @return the augFood
+     * @return the augFood value of the card
      */
     public Integer getAugFood() {
         return augFood;
     }
 
     /**
-     * @return the augMedicine
+     * @return the augMedicine value of the card
      */
     public Integer getAugMedicine() {
         return augMedicine;
     }
 
     /**
-     * @return the augCombat
+     * @return the augCombat value of the card
      */
     public Integer getAugCombat() {
         return augCombat;
     }
 
     /**
-     * @return the type
+     * @return the type of the card
      */
     public CardType getType() {
         return type;
     }
 
     /**
-     * @return the contested
+     * @return the name of the card 
+     */
+    public CardName getCardName(){
+        return name;
+    }
+    
+    /**
+     * @return id the card is a contested card
      */
     public boolean isContested() {
         return contested;

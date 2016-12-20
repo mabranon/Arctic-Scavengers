@@ -17,6 +17,7 @@ public class TribeThreeCard extends Card{
         population = 3;
         
         type = CardType.TRIBE;
+        name = CardName.TRIBE_FAMILY_3;
         
         contested = true;
     }

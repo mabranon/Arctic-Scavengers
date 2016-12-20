@@ -16,6 +16,7 @@ public class SniperTeamCard extends Card implements SpecialAction{
         population = 2;
         
         type = CardType.TRIBE;
+        name = CardName.SNIPER_TEAMS;
     }
     
     /**

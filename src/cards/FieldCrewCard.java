@@ -18,6 +18,7 @@ public class FieldCrewCard extends Card{
         population = 4;
         
         type = CardType.TRIBE;
+        name = CardName.FIELD_CREW;
         
         contested = true;
         

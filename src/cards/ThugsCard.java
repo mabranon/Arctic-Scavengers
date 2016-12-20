@@ -17,5 +17,6 @@ public class ThugsCard extends Card{
         population = 3;
         
         type = CardType.TRIBE;
+        name = CardName.THUGS;
     }
 }

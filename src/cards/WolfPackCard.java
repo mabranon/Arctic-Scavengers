@@ -16,6 +16,7 @@ public class WolfPackCard extends Card{
         augCombat = 2;
         
         type = CardType.TOOL;
+        name = CardName.WOLF_PACK;
         
         contested = true;
     }

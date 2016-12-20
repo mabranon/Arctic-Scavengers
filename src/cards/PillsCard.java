@@ -15,6 +15,7 @@ public class PillsCard extends Card{
         medicine = 1;
         
         type = CardType.MEDS;
+        name = CardName.PILLS;
     }
     
 }

@@ -49,7 +49,7 @@ public class Deck {
     /**
      * @return the deck
      */
-    public List<Card> getDeck() {
+    public List<Card> getCards() {
         return deck;
     }
     

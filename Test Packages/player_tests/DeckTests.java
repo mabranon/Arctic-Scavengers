@@ -31,7 +31,7 @@ public class DeckTests {
                 
         Deck deck = new Deck();
         
-        Iterator traveler = deck.getDeck().iterator();
+        Iterator traveler = deck.getCards().iterator();
         
         while(traveler.hasNext()){
             switch(((Card)traveler.next()).getCardName()){
@@ -67,11 +67,11 @@ public class DeckTests {
         Deck deck = new Deck();
         boolean mismatch = false;
         
-        List<Card> deckOriginal = new ArrayList(deck.getDeck());
+        List<Card> deckOriginal = new ArrayList(deck.getCards());
         deck.shuffleDeck();
         
         for(int i=0; i<deckOriginal.size(); i++){
-            if(deckOriginal.get(i) != deck.getDeck().get(i)){
+            if(deckOriginal.get(i) != deck.getCards().get(i)){
                 mismatch = true;
             }
         }

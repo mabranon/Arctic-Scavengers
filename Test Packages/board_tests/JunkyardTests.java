@@ -10,7 +10,9 @@ import org.junit.Test;
 
 import board.Junkyard;
 import cards.Card;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import org.junit.Assert;
 /**
  *
@@ -72,5 +74,23 @@ public class JunkyardTests {
         Assert.assertEquals(6-numPlayers, numShovels);
         Assert.assertEquals(6, numMedkits);
         Assert.assertEquals(9, numPills);
+    }
+    
+    @Test
+    public void shuffleTest(){
+        int numPlayers = new Random().nextInt(5)+1;
+        Junkyard junkyard = new Junkyard(numPlayers);
+        boolean mismatch = false;
+        
+        List<Card> junkyardOriginal = new ArrayList(junkyard.getYardContents());
+        junkyard.shuffleYard();
+        
+        for(int i=0; i<junkyardOriginal.size(); i++){
+            if(junkyardOriginal.get(i) != junkyard.getYardContents().get(i)){
+                mismatch = true;
+            }
+        }
+        
+        Assert.assertEquals(true, mismatch);
     }
 }

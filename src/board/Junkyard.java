@@ -15,6 +15,7 @@ import cards.PillsCard;
 import cards.ShovelCard;
 import cards.SpearCard;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -62,5 +63,12 @@ public class Junkyard {
      */
     public List<Card> getYardContents() {
         return yardContents;
+    }
+    
+    /**
+     * shuffles the junkyard deck
+     */
+    public void shuffleYard(){
+        Collections.shuffle(yardContents);
     }
 }

@@ -16,7 +16,8 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
     board_tests.MarketTests.class,
     board_tests.JunkyardTests.class,
-    cards_tests.CardTypesTests.class
+    cards_tests.CardTypesTests.class,
+    player_tests.DeckTests.class
 })
 public class AllTests {
     

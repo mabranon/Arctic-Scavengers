@@ -30,8 +30,9 @@ public class PlayerDeckTests {
         int numSpears = 0;
                 
         PlayerDeck deck = new PlayerDeck();
+        deck.seedDeck();
         
-        Iterator traveler = deck.getCards().iterator();
+        Iterator traveler = deck.getDeck().iterator();
         
         while(traveler.hasNext()){
             switch(((Card)traveler.next()).getCardName()){
@@ -65,13 +66,14 @@ public class PlayerDeckTests {
     @Test
     public void shuffleDeckTest(){
         PlayerDeck deck = new PlayerDeck();
+        deck.seedDeck();
         boolean mismatch = false;
         
-        List<Card> deckOriginal = new ArrayList(deck.getCards());
-        deck.shuffleDeck();
+        List<Card> deckOriginal = new ArrayList(deck.getDeck());
+        deck.shuffle();
         
         for(int i=0; i<deckOriginal.size(); i++){
-            if(deckOriginal.get(i) != deck.getCards().get(i)){
+            if(deckOriginal.get(i) != deck.getDeck().get(i)){
                 mismatch = true;
             }
         }

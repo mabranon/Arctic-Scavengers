@@ -6,14 +6,11 @@
 package arctic.player;
 
 import arctic.cards.BrawlerCard;
-import arctic.cards.Card;
 import arctic.cards.RefugeeCard;
 import arctic.cards.ScavengerCard;
 import arctic.cards.ShovelCard;
 import arctic.cards.SpearCard;
 import arctic.util.Deck;
-import java.util.Collections;
-import java.util.List;
 
 /**
  *

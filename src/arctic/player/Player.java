@@ -16,7 +16,8 @@ public class Player {
     
     public Player(){
         deck = new PlayerDeck();
-        deck.shuffleDeck();
+        deck.seedDeck();
+        deck.shuffle();
         
         hand = new Hand();
     }

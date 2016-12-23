@@ -5,7 +5,6 @@
  */
 package arctic.board;
 
-import arctic.cards.Card;
 import arctic.cards.JunkCard;
 import arctic.cards.MedkitCard;
 import arctic.cards.MultitoolCard;
@@ -14,61 +13,59 @@ import arctic.cards.PickaxeCard;
 import arctic.cards.PillsCard;
 import arctic.cards.ShovelCard;
 import arctic.cards.SpearCard;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import arctic.util.Deck;
 
 /**
  *
  * @author Joshua
  */
-public class Junkyard {
+public class Junkyard extends Deck{  
     
-    private List<Card> yardContents;
+    int numPlayers;
     
     public Junkyard(int numPlayers){
-        yardContents = new ArrayList();
-        
+        this.numPlayers = numPlayers;
+    }    
+    
+    /**
+     * adds the starter cards for the junkyard
+     *  - 4 multitools
+     *  - 4 pickaxes
+     *  - 4 nets
+     *  - 6 medkits
+     *  - 9 pills
+     *  - 7 junks
+     *  - up to 6 shovels (dependent on number of players)
+     *  - up to 6 spears ( dependent on number of players)
+     */
+    @Override
+    public void seedDeck(){
         // add multitools, nets, and pickaxes to junkyard
         for(int i=0; i<4; i++){
-            yardContents.add(new MultitoolCard());
-            yardContents.add(new NetCard());
-            yardContents.add(new PickaxeCard());
+            this.add(new MultitoolCard());
+            this.add(new NetCard());
+            this.add(new PickaxeCard());
         }
         
         // add player number dependent tools
         for(int i=0; i<6-numPlayers; i++){
-            yardContents.add(new ShovelCard());
-            yardContents.add(new SpearCard());
+            this.add(new ShovelCard());
+            this.add(new SpearCard());
         }
         
         // add medkits
         for(int i=0; i<6; i++){
-            yardContents.add(new MedkitCard());
+            this.add(new MedkitCard());
         }
         
         // add pills
         for(int i=0; i<9; i++){
-            yardContents.add(new PillsCard());
+            this.add(new PillsCard());
         }
         
         // add junk
         for(int i=0; i<7; i++){
-            yardContents.add(new JunkCard());
+            this.add(new JunkCard());
         }
-    }    
-
-    /**
-     * @return the yardContents
-     */
-    public List<Card> getYardContents() {
-        return yardContents;
-    }
-    
-    /**
-     * shuffles the junkyard deck
-     */
-    public void shuffleYard(){
-        Collections.shuffle(yardContents);
     }
 }

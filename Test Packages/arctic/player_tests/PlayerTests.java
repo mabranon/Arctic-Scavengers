@@ -25,7 +25,7 @@ public class PlayerTests {
         
         List<Card> topDeck = new ArrayList<>();
         for(int i=0; i<5; i++){
-            topDeck.add(player.getDeck().getCards().get(i));
+            topDeck.add(player.getDeck().getDeck().get(i));
         }
         
         player.drawNewHand();

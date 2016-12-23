@@ -24,12 +24,12 @@ public class PlayerTests {
         Player player = new Player();
         
         List<Card> topDeck = new ArrayList<>();
-        for(int i=0; i<7; i++){
+        for(int i=0; i<5; i++){
             topDeck.add(player.getDeck().getCards().get(i));
         }
         
-        player.drawStartingHand();
-        Assert.assertEquals(7, player.getHand().getCards().size());
+        player.drawNewHand();
+        Assert.assertEquals(5, player.getHand().getCards().size());
         
         for(int i=0; i<player.getHand().getCards().size(); i++){
             if(player.getHand().getCards().get(i) != topDeck.get(i)){

@@ -22,11 +22,10 @@ public class Player {
     }
     
     /**
-     * draws a hand of 7 cards from the deck and adds them to the player's hand
-     * Should only be used at the start of the game
+     * draws a hand of 5 cards from the deck and adds them to the player's hand
      */
-    public void drawStartingHand(){
-        for(int i=0; i<7; i++){
+    public void drawNewHand(){
+        for(int i=0; i<5; i++){
             getHand().add(getDeck().draw());
         }
     }

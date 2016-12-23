@@ -17,7 +17,7 @@ import org.junit.runners.Suite;
     arctic.board_tests.MarketTests.class,
     arctic.board_tests.JunkyardTests.class,
     arctic.cards_tests.CardTypesTests.class,
-    arctic.player_tests.DeckTests.class,
+    arctic.player_tests.PlayerDeckTests.class,
     arctic.player_tests.HandTests.class,
     arctic.player_tests.PlayerTests.class
 })

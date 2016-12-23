@@ -11,7 +11,7 @@ import arctic.cards.RefugeeCard;
 import arctic.cards.ScavengerCard;
 import arctic.cards.ShovelCard;
 import arctic.cards.SpearCard;
-import java.util.ArrayList;
+import arctic.util.Deck;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,53 +19,35 @@ import java.util.List;
  *
  * @author Joshua
  */
-public class Deck {
-    
-    private List<Card> deck;
-    
-    public Deck(){
-        deck = new ArrayList<>();
-        
+public class PlayerDeck extends Deck{
+
+    /**
+     * Adds the 10 starter cards to a player's deck
+     *  - 4 Refugees
+     *  - 3 Scavengers
+     *  - 1 Brawler
+     *  - 1 Spear
+     *  - 1 Shovel
+     */
+    @Override
+    public void seedDeck(){
         // add refugee cards
         for(int i=0; i<4; i++){
-            deck.add(new RefugeeCard());
+            this.add(new RefugeeCard());
         }
         
         // add scavenger cards
         for(int i=0; i<3; i++){
-            deck.add(new ScavengerCard());
+            this.add(new ScavengerCard());
         }
         
         // add brawler cards
-        deck.add(new BrawlerCard());
+        this.add(new BrawlerCard());
         
         // add spear card
-        deck.add(new SpearCard());
+        this.add(new SpearCard());
         
         // add shovel
-        deck.add(new ShovelCard());
-    }
-
-    /**
-     * @return the deck
-     */
-    public List<Card> getCards() {
-        return deck;
-    }
-    
-    /**
-     * shuffles deck
-     */
-    public void shuffleDeck(){
-        Collections.shuffle(deck);
-    }
-    
-    /**
-     * draws the top card off the deck
-     * @return the first card on the deck 
-     */
-    public Card draw(){
-        return deck.remove(0);
-    }
-    
+        this.add(new ShovelCard());
+    }    
 }

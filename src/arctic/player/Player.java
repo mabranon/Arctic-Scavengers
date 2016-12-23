@@ -11,11 +11,11 @@ package arctic.player;
  */
 public class Player {
     
-    private Deck deck;
+    private PlayerDeck deck;
     private Hand hand;
     
     public Player(){
-        deck = new Deck();
+        deck = new PlayerDeck();
         deck.shuffleDeck();
         
         hand = new Hand();
@@ -33,7 +33,7 @@ public class Player {
     /**
      * @return the player's current deck
      */
-    public Deck getDeck() {
+    public PlayerDeck getDeck() {
         return deck;
     }
 

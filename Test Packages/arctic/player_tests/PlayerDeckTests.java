@@ -12,13 +12,13 @@ import java.util.List;
 import java.util.Random;
 import org.junit.Assert;
 import org.junit.Test;
-import arctic.player.Deck;
+import arctic.player.PlayerDeck;
 
 /**
  *
  * @author Joshua
  */
-public class DeckTests {
+public class PlayerDeckTests {
     
     @Test
     public void initializeDeckTest(){
@@ -29,7 +29,7 @@ public class DeckTests {
         int numBrawlers = 0;
         int numSpears = 0;
                 
-        Deck deck = new Deck();
+        PlayerDeck deck = new PlayerDeck();
         
         Iterator traveler = deck.getCards().iterator();
         
@@ -64,7 +64,7 @@ public class DeckTests {
     
     @Test
     public void shuffleDeckTest(){
-        Deck deck = new Deck();
+        PlayerDeck deck = new PlayerDeck();
         boolean mismatch = false;
         
         List<Card> deckOriginal = new ArrayList(deck.getCards());

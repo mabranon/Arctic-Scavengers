@@ -33,8 +33,9 @@ public class JunkyardTests {
                 
         int numPlayers = new Random().nextInt(5)+1;
         Junkyard junkyard = new Junkyard(numPlayers);
+        junkyard.seedDeck();
         
-        Iterator traveler = junkyard.getYardContents().iterator();
+        Iterator traveler = junkyard.getDeck().iterator();
         
         while(traveler.hasNext()){
             switch(((Card)traveler.next()).getCardName()){
@@ -80,13 +81,14 @@ public class JunkyardTests {
     public void shuffleTest(){
         int numPlayers = new Random().nextInt(5)+1;
         Junkyard junkyard = new Junkyard(numPlayers);
+        junkyard.seedDeck();
         boolean mismatch = false;
         
-        List<Card> junkyardOriginal = new ArrayList(junkyard.getYardContents());
-        junkyard.shuffleYard();
+        List<Card> junkyardOriginal = new ArrayList(junkyard.getDeck());
+        junkyard.shuffle();
         
         for(int i=0; i<junkyardOriginal.size(); i++){
-            if(junkyardOriginal.get(i) != junkyard.getYardContents().get(i)){
+            if(junkyardOriginal.get(i) != junkyard.getDeck().get(i)){
                 mismatch = true;
             }
         }

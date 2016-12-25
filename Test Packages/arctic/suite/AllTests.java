@@ -16,6 +16,7 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
     arctic.board_tests.MarketTests.class,
     arctic.board_tests.JunkyardTests.class,
+    arctic.board_tests.ContestedResourcesTest.class,
     arctic.cards_tests.CardTypesTests.class,
     arctic.player_tests.PlayerDeckTests.class,
     arctic.player_tests.HandTests.class,

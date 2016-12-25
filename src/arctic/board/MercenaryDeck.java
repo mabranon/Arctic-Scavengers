@@ -44,8 +44,7 @@ public class MercenaryDeck extends Deck{
         }
     }
     
-    
-    
+      
     /**
      * adds the starter cards for a mercenary deck
      */

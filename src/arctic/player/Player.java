@@ -5,6 +5,8 @@
  */
 package arctic.player;
 
+import java.util.List;
+
 /**
  *
  * @author Joshua
@@ -13,6 +15,7 @@ public class Player {
     
     private PlayerDeck deck;
     private Hand hand;
+    private DiscardPile discardPile;
     
     public Player(){
         deck = new PlayerDeck();
@@ -20,6 +23,9 @@ public class Player {
         deck.shuffle();
         
         hand = new Hand();
+        
+        discardPile = new DiscardPile();
+        
     }
     
     /**
@@ -32,6 +38,14 @@ public class Player {
     }
 
     /**
+     * method removes a card from players hand
+     * @param index the index of the card to be removed in the hand
+     */
+    public void discard(int index){
+        discardPile.add(hand.getCards().remove(index));
+    }
+    
+    /**
      * @return the player's current deck
      */
     public PlayerDeck getDeck() {
@@ -43,6 +57,13 @@ public class Player {
      */
     public Hand getHand() {
         return hand;
+    }
+    
+    /**
+     * @return the players discard pile 
+     */
+    public List getDiscardPile(){
+        return discardPile.getDiscardPile();
     }
     
 }

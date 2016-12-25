@@ -21,8 +21,19 @@ public class Hand {
         hand = new ArrayList<>();
     }
     
+    /**
+     * Adds a card to hand
+     * @param card 
+     */
     public void add(Card card){
         hand.add(card);
+    }
+    
+    /**
+     * @return the number of cards in hand
+     */
+    public int getHandSize(){
+        return hand.size();
     }
 
     /**

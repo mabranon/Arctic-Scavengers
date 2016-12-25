@@ -5,16 +5,7 @@
  */
 package arctic.board;
 
-import arctic.cards.BrawlerCard;
-import arctic.cards.GroupLeadersCard;
-import arctic.cards.HunterCard;
-import arctic.cards.SaboteurCard;
-import arctic.cards.ScavengerCard;
-import arctic.cards.ScoutCard;
-import arctic.cards.SniperTeamCard;
-import arctic.cards.ThugsCard;
-import java.util.ArrayList;
-import java.util.List;
+import arctic.cards.CardName;
 
 /**
  *
@@ -22,110 +13,94 @@ import java.util.List;
  */
 public class Market {
     
-    private List<BrawlerCard> brawlers;
-    private List<HunterCard> hunters;
-    private List<SaboteurCard> saboteurs;
-    private List<ScoutCard> scouts;
-    private List<GroupLeadersCard> groupLeaders;
-    private List<SniperTeamCard> sniperTeams;
-    private List<ThugsCard> thugs;
-    private List<ScavengerCard> scavengers;
+    private MercenaryDeck brawlers;
+    private MercenaryDeck hunters;
+    private MercenaryDeck saboteurs;
+    private MercenaryDeck scouts;
+    private MercenaryDeck groupLeaders;
+    private MercenaryDeck sniperTeams;
+    private MercenaryDeck thugs;
+    private MercenaryDeck scavengers;
     
     public Market(int numPlayers){
-        brawlers = new ArrayList();
-        for(int i=0; i<10-numPlayers; i++){
-            brawlers.add(new BrawlerCard());
-        }
+        brawlers = new MercenaryDeck(numPlayers, CardName.BRAWLER);
+        brawlers.seedDeck();
         
-        hunters = new ArrayList();
-        for(int i=0; i<8; i++){
-            hunters.add(new HunterCard());
-        }
+        hunters = new MercenaryDeck(numPlayers, CardName.HUNTER);
+        hunters.seedDeck();
         
-        saboteurs = new ArrayList();
-        for(int i=0; i<8; i++){
-            saboteurs.add(new SaboteurCard());
-        }
+        saboteurs = new MercenaryDeck(numPlayers, CardName.SABOTEUR);
+        saboteurs.seedDeck();
         
-        scouts = new ArrayList();
-        for(int i=0; i<8; i++){
-            scouts.add(new ScoutCard());
-        }
+        scouts = new MercenaryDeck(numPlayers, CardName.SCOUT);
+        scouts.seedDeck();
         
-        groupLeaders = new ArrayList();
-        for(int i=0; i<5; i++){
-            groupLeaders.add(new GroupLeadersCard());
-        }
+        groupLeaders = new MercenaryDeck(numPlayers, CardName.GROUP_LEADERS);
+        groupLeaders.seedDeck();
         
-        sniperTeams = new ArrayList();
-        for(int i=0; i<5; i++){
-            sniperTeams.add(new SniperTeamCard());
-        }
+        sniperTeams = new MercenaryDeck(numPlayers, CardName.SNIPER_TEAMS);
+        sniperTeams.seedDeck();
         
-        thugs = new ArrayList();
-        for(int i=0; i<5; i++){
-            thugs.add(new ThugsCard());
-        }
+        thugs = new MercenaryDeck(numPlayers, CardName.THUGS);
+        thugs.seedDeck();
         
-        scavengers = new ArrayList();
-        for(int i=0; i<20-(numPlayers*3); i++){
-            scavengers.add(new ScavengerCard());
-        }
+        scavengers = new MercenaryDeck(numPlayers, CardName.SCAVENGER);
+        scavengers.seedDeck();
     }
 
     /**
      * @return the brawlers available on the market
      */
-    public List<BrawlerCard> getBrawlers() {
+    public MercenaryDeck getBrawlers() {
         return brawlers;
     }
 
     /**
      * @return the hunters available on the market
      */
-    public List<HunterCard> getHunters() {
+    public MercenaryDeck getHunters() {
         return hunters;
     }
 
     /**
      * @return the saboteurs available on the market
      */
-    public List<SaboteurCard> getSaboteurs() {
+    public MercenaryDeck getSaboteurs() {
         return saboteurs;
     }
 
     /**
      * @return the scouts available on the market
      */
-    public List<ScoutCard> getScouts() {
+    public MercenaryDeck getScouts() {
         return scouts;
     }
 
     /**
      * @return the groupLeaders available on the market
      */
-    public List<GroupLeadersCard> getGroupLeaders() {
+    public MercenaryDeck getGroupLeaders() {
         return groupLeaders;
     }
 
     /**
      * @return the sniperTeams available on the market
      */
-    public List<SniperTeamCard> getSniperTeams() {
+    public MercenaryDeck getSniperTeams() {
         return sniperTeams;
     }
 
     /**
      * @return the thugs available on the market
      */
-    public List<ThugsCard> getThugs() {
+    public MercenaryDeck getThugs() {
         return thugs;
     }
 
     /**
      * @return the scavengers available on the market
      */
-    public List<ScavengerCard> getScavengers() {
+    public MercenaryDeck getScavengers() {
         return scavengers;
     }
 }

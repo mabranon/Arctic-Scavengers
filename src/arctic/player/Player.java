@@ -19,7 +19,7 @@ public class Player {
     private PlayerDeck deck;
     private Hand hand;
     private List<Card> discardPile;
-    
+        
     public Player(){
         deck = new PlayerDeck();
         deck.seedDeck();
@@ -84,13 +84,13 @@ public class Player {
         return discardPile;
     }
     
-  
-    
+    /**
+     * method re-shuffles the discard pile into the deck
+     */
     public void recyCycleDiscard(){
         deck.add(discardPile);
         deck.shuffle();
         
         discardPile.clear();
-    }
-    
+    }  
 }

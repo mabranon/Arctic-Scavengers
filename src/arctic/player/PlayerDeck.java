@@ -6,6 +6,7 @@
 package arctic.player;
 
 import arctic.cards.BrawlerCard;
+import arctic.cards.Card;
 import arctic.cards.RefugeeCard;
 import arctic.cards.ScavengerCard;
 import arctic.cards.ShovelCard;
@@ -18,6 +19,8 @@ import arctic.util.Deck;
  */
 public class PlayerDeck extends Deck{
 
+   
+    
     /**
      * Adds the 10 starter cards to a player's deck
      *  - 4 Refugees

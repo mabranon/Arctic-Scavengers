@@ -23,6 +23,22 @@ public abstract class Deck {
     }
     
     /**
+     * method returns how many cards are in the deck
+     * @return 
+     */
+    public int size(){
+        return deck.size();
+    }
+    
+    /**
+     * method returns true if the deck is empty
+     * @return 
+     */
+    public boolean isEmpty(){
+        return deck.isEmpty();
+    }
+    
+    /**
      * draws the top card off the deck
      * @return the first card on the deck 
      */

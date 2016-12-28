@@ -5,6 +5,9 @@
  */
 package arctic.player;
 
+import arctic.cards.Card;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +18,7 @@ public class Player {
     
     private PlayerDeck deck;
     private Hand hand;
-    private DiscardPile discardPile;
+    private List<Card> discardPile;
     
     public Player(){
         deck = new PlayerDeck();
@@ -24,7 +27,7 @@ public class Player {
         
         hand = new Hand();
         
-        discardPile = new DiscardPile();
+        discardPile = new ArrayList<>();
         
     }
     
@@ -37,6 +40,21 @@ public class Player {
         }
     }
 
+    /**
+     * method draws a number of cards from the player's deck and adds them to
+     * the players hand
+     * @param numCards number of cards to draw 
+     */
+    public void draw(int numCards){
+        while(numCards>0){
+            if(deck.isEmpty()){
+                this.recyCycleDiscard();
+            }
+            hand.add(deck.draw());
+            numCards--;
+        }
+    }
+    
     /**
      * method removes a card from players hand
      * @param index the index of the card to be removed in the hand
@@ -63,7 +81,16 @@ public class Player {
      * @return the players discard pile 
      */
     public List getDiscardPile(){
-        return discardPile.getDiscardPile();
+        return discardPile;
+    }
+    
+  
+    
+    public void recyCycleDiscard(){
+        deck.add(discardPile);
+        deck.shuffle();
+        
+        discardPile.clear();
     }
     
 }

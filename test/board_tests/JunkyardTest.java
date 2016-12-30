@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.board_tests;
+package board_tests;
 
 import java.util.Random;
 import org.junit.Test;

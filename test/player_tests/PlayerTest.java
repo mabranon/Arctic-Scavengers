@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.player_tests;
+package player_tests;
 
 import arctic.cards.Card;
 import java.util.ArrayList;

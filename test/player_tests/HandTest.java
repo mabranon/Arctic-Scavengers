@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.player_tests;
+package player_tests;
 
 import org.junit.Test;
 
 import arctic.cards.BrawlerCard;
 import arctic.cards.Card;
 import arctic.cards.RefugeeCard;
-import arctic.cards.SpearCard;
 import org.junit.Assert;
 import arctic.player.Hand;
 

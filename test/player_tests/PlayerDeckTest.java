@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.player_tests;
+package player_tests;
 
 import arctic.cards.Card;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
 import org.junit.Assert;
 import org.junit.Test;
 import arctic.player.PlayerDeck;

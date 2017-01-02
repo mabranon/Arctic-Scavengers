@@ -17,7 +17,7 @@ import java.util.List;
 public class Player {
     
     private PlayerDeck deck;
-    private Hand hand;
+    private List<Card> hand;
     private List<Card> discardPile;
         
     public Player(){
@@ -25,7 +25,7 @@ public class Player {
         deck.seedDeck();
         deck.shuffle();
         
-        hand = new Hand();
+        hand = new ArrayList<>();
         
         discardPile = new ArrayList<>();
         
@@ -36,7 +36,7 @@ public class Player {
      */
     public void drawNewHand(){
         for(int i=0; i<5; i++){
-            getHand().add(getDeck().draw());
+            hand.add(getDeck().draw());
         }
     }
 
@@ -60,7 +60,7 @@ public class Player {
      * @param index the index of the card to be removed in the hand
      */
     public void discard(int index){
-        discardPile.add(hand.getCards().remove(index));
+        discardPile.add(hand.remove(index));
     }
     
     /**
@@ -73,12 +73,12 @@ public class Player {
     /**
      * @return the player's current hand
      */
-    public Hand getHand() {
+    public List<Card> getHand() {
         return hand;
     }
     
     public void trash(List<Card> cardsToTrash){
-        hand.getCards().removeAll(cardsToTrash);
+        hand.removeAll(cardsToTrash);
     }
     
     /**

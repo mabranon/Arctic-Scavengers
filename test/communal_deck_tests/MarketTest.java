@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package board_tests;
+package communal_deck_tests;
 
 import org.junit.Test;
 
-import arctic.board.Market;
+import arctic.communal_decks.Market;
 import java.util.Random;
 import org.junit.Assert;
 

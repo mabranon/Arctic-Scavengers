@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package board_tests;
+package communal_deck_tests;
 
 import java.util.Random;
 import org.junit.Test;
 
-import arctic.board.Junkyard;
+import arctic.communal_decks.Junkyard;
 import arctic.cards.Card;
 import java.util.Iterator;
 import org.junit.Assert;

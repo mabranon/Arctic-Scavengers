@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package board_tests;
+package communal_deck_tests;
 
-import arctic.board.ContestedResources;
+import arctic.communal_decks.ContestedResources;
 import arctic.cards.Card;
 
 import java.util.Iterator;

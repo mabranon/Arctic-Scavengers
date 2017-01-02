@@ -77,6 +77,10 @@ public class Player {
         return hand;
     }
     
+    public void trash(List<Card> cardsToTrash){
+        hand.getCards().removeAll(cardsToTrash);
+    }
+    
     /**
      * @return the players discard pile 
      */

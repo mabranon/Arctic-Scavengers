@@ -6,9 +6,7 @@
 package player_tests;
 
 import arctic.cards.Card;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 import arctic.player.PlayerDeck;

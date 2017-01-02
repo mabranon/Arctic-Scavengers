@@ -23,16 +23,21 @@ public class PlayerTest {
     
     @Test
     public void drawStartingHandTest(){
+        // create a new player
         Player player = new Player();
         
+        // keep track of the top 5 cards of the deck
         List<Card> topDeck = new ArrayList<>();
         for(int i=0; i<5; i++){
             topDeck.add(player.getDeck().getDeck().get(i));
         }
         
+        // draw a new hand of 5 cards
         player.drawNewHand();
-        Assert.assertEquals(5, player.getHand().size());
         
+        // assert that the players hand size is correct and that the cards
+        // match those that exist off the top of the deck
+        Assert.assertEquals(5, player.getHand().size());
         for(int i=0; i<player.getHand().size(); i++){
             if(player.getHand().get(i) != topDeck.get(i)){
                 Assert.fail("Hand does not match what should have been drawn");

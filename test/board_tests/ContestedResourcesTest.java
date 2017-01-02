@@ -20,6 +20,7 @@ public class ContestedResourcesTest {
 
     @Test
     public void initializeNewContestedRsourcesDeck() throws Exception {
+        // card counts
         int numCrew = 0;
         int numGrenade = 0;
         int numSled = 0;
@@ -28,11 +29,12 @@ public class ContestedResourcesTest {
         int numFam5 = 0;
         int numWolves = 0;
 
+        // create and seed contested resources
         ContestedResources resources = new ContestedResources();
         resources.seedDeck();
 
+        // iterate over contested recourses and keep track of card counts
         Iterator traveler = resources.getDeck().iterator();
-
         while (traveler.hasNext()) {
             switch (((Card) traveler.next()).getCardName()) {
                 case FIELD_CREW:
@@ -60,6 +62,8 @@ public class ContestedResourcesTest {
                     Assert.fail("Illegal card type");
             }
         }
+        
+        // assert that counts equal expected values
         Assert.assertEquals(2, numCrew);
         Assert.assertEquals(2, numGrenade);
         Assert.assertEquals(2, numSled);

@@ -21,18 +21,19 @@ public class PlayerDeckTest {
     
     @Test
     public void initializeDeckTest(){
-                
+        // card counts        
         int numRefugees = 0;
         int numScavengers = 0;
         int numShovels = 0;
         int numBrawlers = 0;
         int numSpears = 0;
                 
+        // create and seed a new player deck
         PlayerDeck deck = new PlayerDeck();
         deck.seedDeck();
         
+        // iterate and keep track of card counts
         Iterator traveler = deck.getDeck().iterator();
-        
         while(traveler.hasNext()){
             switch(((Card)traveler.next()).getCardName()){
                 case REFUGEE:
@@ -55,29 +56,11 @@ public class PlayerDeckTest {
             }
         }
         
+        // assert that card counts equal the expected values
         Assert.assertEquals(4, numRefugees);
         Assert.assertEquals(3, numScavengers);
         Assert.assertEquals(1, numBrawlers);
         Assert.assertEquals(1, numSpears);
         Assert.assertEquals(1, numShovels);
     }
-    
-    @Test
-    public void shuffleDeckTest(){
-        PlayerDeck deck = new PlayerDeck();
-        deck.seedDeck();
-        boolean mismatch = false;
-        
-        List<Card> deckOriginal = new ArrayList(deck.getDeck());
-        deck.shuffle();
-        
-        for(int i=0; i<deckOriginal.size(); i++){
-            if(deckOriginal.get(i) != deck.getDeck().get(i)){
-                mismatch = true;
-            }
-        }
-        
-        Assert.assertEquals(true, mismatch);
-    }
-    
 }

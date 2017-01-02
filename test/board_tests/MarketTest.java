@@ -19,9 +19,11 @@ public class MarketTest {
     
     @Test
     public void intializeNewMarket(){
+        // create a new mercenary market for a random number of players
         int numPlayers = new Random().nextInt(5)+1;
         Market market = new Market(numPlayers);
         
+        // assert that card counts equal the expected values
         Assert.assertEquals((10 - numPlayers), 
                 market.getBrawlers().getDeck().size());
         Assert.assertEquals(8, market.getHunters().getDeck().size());

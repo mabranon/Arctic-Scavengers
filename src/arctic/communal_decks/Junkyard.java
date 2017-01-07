@@ -23,12 +23,8 @@ public class Junkyard extends Deck{
     
     int numPlayers;
     
-    public Junkyard(int numPlayers){
-        this.numPlayers = numPlayers;
-    }    
-    
     /**
-     * adds the starter cards for the junkyard
+     * Constructs a junkyard
      *  - 4 multitools
      *  - 4 pickaxes
      *  - 4 nets
@@ -37,35 +33,37 @@ public class Junkyard extends Deck{
      *  - 7 junks
      *  - up to 6 shovels (dependent on number of players)
      *  - up to 6 spears ( dependent on number of players)
-     */
-    @Override
-    public void seedDeck(){
+     * @param numPlayers
+     */    
+    public Junkyard(int numPlayers){
+        this.numPlayers = numPlayers;
+        
         // add multitools, nets, and pickaxes to junkyard
         for(int i=0; i<4; i++){
-            this.add(new MultitoolCard());
-            this.add(new NetCard());
-            this.add(new PickaxeCard());
+            deck.add(new MultitoolCard());
+            deck.add(new NetCard());
+            deck.add(new PickaxeCard());
         }
         
         // add player number dependent tools
         for(int i=0; i<6-numPlayers; i++){
-            this.add(new ShovelCard());
-            this.add(new SpearCard());
+            deck.add(new ShovelCard());
+            deck.add(new SpearCard());
         }
         
         // add medkits
         for(int i=0; i<6; i++){
-            this.add(new MedkitCard());
+            deck.add(new MedkitCard());
         }
         
         // add pills
         for(int i=0; i<9; i++){
-            this.add(new PillsCard());
+            deck.add(new PillsCard());
         }
         
         // add junk
         for(int i=0; i<7; i++){
-            this.add(new JunkCard());
+            deck.add(new JunkCard());
         }
-    }
+    }    
 }

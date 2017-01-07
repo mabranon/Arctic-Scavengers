@@ -16,13 +16,12 @@ import java.util.List;
  */
 public class Player {
     
-    private PlayerDeck deck;
-    private List<Card> hand;
-    private List<Card> discardPile;
+    private final PlayerDeck deck;
+    private final List<Card> hand;
+    private final List<Card> discardPile;
         
     public Player(){
         deck = new PlayerDeck();
-        deck.seedDeck();
         deck.shuffle();
         
         hand = new ArrayList<>();

@@ -16,37 +16,33 @@ import arctic.util.Deck;
  *
  * @author Joshua
  */
-public class PlayerDeck extends Deck{
+public class PlayerDeck extends Deck {
 
-   
-    
     /**
-     * Adds the 10 starter cards to a player's deck
-     *  - 4 Refugees
-     *  - 3 Scavengers
-     *  - 1 Brawler
-     *  - 1 Spear
-     *  - 1 Shovel
+     * Constructs a new player deck
+     * 4 Refugees - 3 Scavengers - 1 Brawler - 1 Spear - 1 Shovel
      */
-    @Override
-    public void seedDeck(){
+    public PlayerDeck() {
         // add refugee cards
-        for(int i=0; i<4; i++){
-            this.add(new RefugeeCard());
+        for (int i = 0; i < 4; i++) {
+            deck.add(new RefugeeCard());
         }
-        
+
         // add scavenger cards
-        for(int i=0; i<3; i++){
-            this.add(new ScavengerCard());
+        for (int i = 0; i < 3; i++) {
+            deck.add(new ScavengerCard());
         }
-        
+
         // add brawler cards
-        this.add(new BrawlerCard());
-        
+        deck.add(new BrawlerCard());
+
         // add spear card
-        this.add(new SpearCard());
-        
+        deck.add(new SpearCard());
+
         // add shovel
-        this.add(new ShovelCard());
-    }    
+        deck.add(new ShovelCard());
+    }
+
+    
+
 }

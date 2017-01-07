@@ -5,102 +5,64 @@
  */
 package arctic.communal_decks;
 
+import arctic.cards.BrawlerCard;
 import arctic.cards.CardName;
+import arctic.cards.GroupLeadersCard;
+import arctic.cards.HunterCard;
+import arctic.cards.SaboteurCard;
+import arctic.cards.ScavengerCard;
+import arctic.cards.ScoutCard;
+import arctic.cards.SniperTeamCard;
+import arctic.cards.ThugsCard;
+import arctic.util.Deck;
 
 /**
  *
  * @author Joshua
  */
 public class Market {
-    
-    private MercenaryDeck brawlers;
-    private MercenaryDeck hunters;
-    private MercenaryDeck saboteurs;
-    private MercenaryDeck scouts;
-    private MercenaryDeck groupLeaders;
-    private MercenaryDeck sniperTeams;
-    private MercenaryDeck thugs;
-    private MercenaryDeck scavengers;
-    
-    public Market(int numPlayers){
-        brawlers = new MercenaryDeck(numPlayers, CardName.BRAWLER);
-        brawlers.seedDeck();
-        
-        hunters = new MercenaryDeck(numPlayers, CardName.HUNTER);
-        hunters.seedDeck();
-        
-        saboteurs = new MercenaryDeck(numPlayers, CardName.SABOTEUR);
-        saboteurs.seedDeck();
-        
-        scouts = new MercenaryDeck(numPlayers, CardName.SCOUT);
-        scouts.seedDeck();
-        
-        groupLeaders = new MercenaryDeck(numPlayers, CardName.GROUP_LEADERS);
-        groupLeaders.seedDeck();
-        
-        sniperTeams = new MercenaryDeck(numPlayers, CardName.SNIPER_TEAMS);
-        sniperTeams.seedDeck();
-        
-        thugs = new MercenaryDeck(numPlayers, CardName.THUGS);
-        thugs.seedDeck();
-        
-        scavengers = new MercenaryDeck(numPlayers, CardName.SCAVENGER);
-        scavengers.seedDeck();
-    }
 
-    /**
-     * @return the brawlers available on the market
-     */
-    public MercenaryDeck getBrawlers() {
-        return brawlers;
-    }
+    private final Deck brawlers;
+    private final Deck hunters;
+    private final Deck saboteurs;
+    private final Deck scouts;
+    private final Deck groupLeaders;
+    private final Deck sniperTeams;
+    private final Deck thugs;
+    private final Deck scavengers;
 
-    /**
-     * @return the hunters available on the market
-     */
-    public MercenaryDeck getHunters() {
-        return hunters;
-    }
+    public Market(int numPlayers) {
+        brawlers = new Deck();
+        hunters = new Deck();
+        saboteurs = new Deck();
+        scouts = new Deck();
+        groupLeaders = new Deck();
+        sniperTeams = new Deck();
+        thugs = new Deck();
+        scavengers = new Deck();
 
-    /**
-     * @return the saboteurs available on the market
-     */
-    public MercenaryDeck getSaboteurs() {
-        return saboteurs;
-    }
+        // add brawlers to market
+        for (int i = 0; i < 10 - numPlayers; i++) {
+            brawlers.add(new BrawlerCard());
+        }
 
-    /**
-     * @return the scouts available on the market
-     */
-    public MercenaryDeck getScouts() {
-        return scouts;
-    }
+        // add hunters, saboteurs, and scouts to market
+        for (int i = 0; i < 8; i++) {
+            hunters.add(new HunterCard());
+            saboteurs.add(new SaboteurCard());
+            scouts.add(new ScoutCard());
+        }
 
-    /**
-     * @return the groupLeaders available on the market
-     */
-    public MercenaryDeck getGroupLeaders() {
-        return groupLeaders;
-    }
+        // add group leaders, sniper teams, and thugs to market
+        for (int i = 0; i < 5; i++) {
+            groupLeaders.add(new GroupLeadersCard());
+            sniperTeams.add(new SniperTeamCard());
+            thugs.add(new ThugsCard());
+        }
 
-    /**
-     * @return the sniperTeams available on the market
-     */
-    public MercenaryDeck getSniperTeams() {
-        return sniperTeams;
-    }
-
-    /**
-     * @return the thugs available on the market
-     */
-    public MercenaryDeck getThugs() {
-        return thugs;
-    }
-
-    /**
-     * @return the scavengers available on the market
-     */
-    public MercenaryDeck getScavengers() {
-        return scavengers;
+        // add scavengers to market
+        for (int i = 0; i < 20 - (numPlayers * 3); i++) {
+            scavengers.add(new ScavengerCard());
+        }
     }
 }

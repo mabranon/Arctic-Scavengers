@@ -14,9 +14,9 @@ import java.util.List;
  *
  * @author AppleGrocer
  */
-public abstract class Deck {
+public class Deck {
     
-    private List<Card> deck;
+    protected final List<Card> deck;
     
     public Deck(){
         deck = new ArrayList<>();
@@ -75,6 +75,4 @@ public abstract class Deck {
     public List<Card> getDeck() {
         return deck;
     }
-    
-    public abstract void seedDeck();
 }

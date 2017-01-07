@@ -20,17 +20,15 @@ import arctic.util.Deck;
  */
 public class ContestedResources extends Deck{
     
-    @Override
-    public void seedDeck() {
+    public ContestedResources(){
         for(int i=0; i<2; i++){
-            this.add(new GrenadeCard());
-            this.add(new FieldCrewCard());
-            this.add(new SledTeamCard());
-            this.add(new WolfPackCard());
-            this.add(new TribeThreeCard());
-            this.add(new TribeFourCard());
-            this.add(new TribeFiveCard());
+            deck.add(new GrenadeCard());
+            deck.add(new FieldCrewCard());
+            deck.add(new SledTeamCard());
+            deck.add(new WolfPackCard());
+            deck.add(new TribeThreeCard());
+            deck.add(new TribeFourCard());
+            deck.add(new TribeFiveCard());
         }
-    }
-    
+    }    
 }

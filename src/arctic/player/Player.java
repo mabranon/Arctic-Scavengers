@@ -16,11 +16,17 @@ import java.util.List;
  */
 public class Player {
     
+    private final PlayerType type;
     private final PlayerDeck deck;
     private final List<Card> hand;
     private final List<Card> discardPile;
+    
+    private int foodStore;
+    private int medicineStore;
         
-    public Player(){
+    public Player(PlayerType type){
+        this.type = type;
+                
         deck = new PlayerDeck();
         deck.shuffle();
         
@@ -28,6 +34,8 @@ public class Player {
         
         discardPile = new ArrayList<>();
         
+        foodStore = 0;
+        medicineStore = 0;
     }
     
     /**
@@ -96,4 +104,33 @@ public class Player {
         
         discardPile.clear();
     }  
+    
+    /**
+     * method resets food and medicine stores of player to 0. This is meant to
+     * be reset at the end of the players turn
+     */
+    public void resetStores(){
+        foodStore = 0;
+        medicineStore = 0;
+    }
+
+    public PlayerType getType() {
+        return type;
+    }
+
+    public int getFoodStore() {
+        return foodStore;
+    }
+
+    public void addToFoodStore(int food) {
+        this.foodStore += food;
+    }
+
+    public int getMedicineStore() {
+        return medicineStore;
+    }
+
+    public void addToMedicineStore(int medicine) {
+        this.medicineStore += medicine;
+    }
 }

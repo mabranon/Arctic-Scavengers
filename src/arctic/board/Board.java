@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package arctic.engine;
+package arctic.board;
 
 import arctic.communal_decks.ContestedResources;
 import arctic.communal_decks.Junkyard;
@@ -19,27 +19,18 @@ import java.util.List;
  */
 public class Board {
     
-    private final int NUM_PLAYERS; 
-    private final List<Player> players;
+    private final int numPlayers; 
     
     private final Junkyard junkyard;
     private final Market market;
     private final ContestedResources contestedResources;
     
     public Board(int numPlayers){
-        NUM_PLAYERS = numPlayers;
-        players = new ArrayList<>();
-        for(int i=0; i<NUM_PLAYERS; i++){
-            players.add(new Player());
-        }
+        this.numPlayers = numPlayers;
         
-        junkyard = new Junkyard(NUM_PLAYERS);
-        market = new Market(NUM_PLAYERS);
+        junkyard = new Junkyard(this.numPlayers);
+        market = new Market(this.numPlayers);
         contestedResources = new ContestedResources();        
-    }
-    
-    public int getNumPlayers(){
-        return players.size();
     }
     
     public Junkyard getJunkyard(){

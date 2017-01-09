@@ -6,6 +6,7 @@
 package arctic.engine;
 
 import arctic.board.Board;
+import arctic.cards.Card;
 import arctic.player.Player;
 import arctic.player.PlayerType;
 
@@ -40,6 +41,21 @@ public class Game {
         initiatorPlayer = playerList.get(new Random().nextInt(numPlayers));
         playerTakingTurn = initiatorPlayer;
     }
+    
+    public void drawAction(List<Card> cardsPlayed){
+        int numCardsToDraw = 0;
+        
+        for(Card card : cardsPlayed){
+            if(card.getDraw() != null){
+                numCardsToDraw += card.getDraw();
+            }else if(card.getAugDraw() != null){
+                numCardsToDraw += card.getAugDraw();
+            }
+            playerTakingTurn.discardFromHand(card);
+        }
+        
+        playerTakingTurn.draw(numCardsToDraw);
+    }
            
     /**
      * completes the turn of the current player, resetting their stores and 
@@ -59,7 +75,7 @@ public class Game {
         playerTakingTurn = initiatorPlayer;
     }
     
-    private Player nextPlayer(Player current){
-        return playerList.get(playerList.indexOf(current)+1 % numPlayers);
+    private Player nextPlayer(Player currentPlayer){
+        return playerList.get(playerList.indexOf(currentPlayer)+1 % numPlayers);
     }
 }

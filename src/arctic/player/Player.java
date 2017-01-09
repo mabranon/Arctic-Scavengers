@@ -64,10 +64,11 @@ public class Player {
     
     /**
      * method removes a card from players hand
-     * @param index the index of the card to be removed in the hand
+     * @param discardedCard
      */
-    public void discard(int index){
-        discardPile.add(hand.remove(index));
+    public void discardFromHand(Card discardedCard){
+        hand.remove(discardedCard);
+        discardPile.add(discardedCard);
     }
     
     /**

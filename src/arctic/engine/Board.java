@@ -8,6 +8,10 @@ package arctic.engine;
 import arctic.communal_decks.ContestedResources;
 import arctic.communal_decks.Junkyard;
 import arctic.communal_decks.Market;
+import arctic.player.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,7 +19,8 @@ import arctic.communal_decks.Market;
  */
 public class Board {
     
-    private final int NUM_PLAYERS;
+    private final int NUM_PLAYERS; 
+    private final List<Player> players;
     
     private final Junkyard junkyard;
     private final Market market;
@@ -23,6 +28,10 @@ public class Board {
     
     public Board(int numPlayers){
         NUM_PLAYERS = numPlayers;
+        players = new ArrayList<>();
+        for(int i=0; i<NUM_PLAYERS; i++){
+            players.add(new Player());
+        }
         
         junkyard = new Junkyard(NUM_PLAYERS);
         market = new Market(NUM_PLAYERS);
@@ -30,7 +39,7 @@ public class Board {
     }
     
     public int getNumPlayers(){
-        return NUM_PLAYERS;
+        return players.size();
     }
     
     public Junkyard getJunkyard(){

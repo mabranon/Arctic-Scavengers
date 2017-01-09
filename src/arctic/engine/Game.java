@@ -42,6 +42,10 @@ public class Game {
         playerTakingTurn = initiatorPlayer;
     }
     
+    /**
+     * Method draws X cards where X is the draw value of cards played
+     * @param cardsPlayed 
+     */
     public void drawAction(List<Card> cardsPlayed){
         int numCardsToDraw = 0;
         

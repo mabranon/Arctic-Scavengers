@@ -13,7 +13,7 @@ public class RefugeeCard extends Card{
     
     public RefugeeCard(){
         search = new StandardAttribute(0);
-        food = new StandardAttribute(0);
+        hunt = new StandardAttribute(0);
         population = new StandardAttribute(1);   
         
         type = CardType.TRIBE;

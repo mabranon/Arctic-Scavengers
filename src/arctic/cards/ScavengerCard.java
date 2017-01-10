@@ -14,7 +14,7 @@ public class ScavengerCard extends Card{
     public ScavengerCard(){
         draw = new StandardAttribute(1);
         search = new StandardAttribute(1);
-        food = new StandardAttribute(1);
+        hunt = new StandardAttribute(1);
         combat = new StandardAttribute(1);
         population = new StandardAttribute(1);   
         

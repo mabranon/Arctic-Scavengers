@@ -12,7 +12,7 @@ package arctic.cards;
 public class HunterCard extends Card{
     
     public HunterCard(){
-        food = new StandardAttribute(2);
+        hunt = new StandardAttribute(2);
         combat = new StandardAttribute(1);
         population = new StandardAttribute(1);
         

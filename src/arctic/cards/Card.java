@@ -12,7 +12,7 @@ package arctic.cards;
 public abstract class Card {
     Attribute draw;
     Attribute search;
-    Attribute food;
+    Attribute hunt;
     Attribute medicine;
     Attribute combat;
     Attribute population;
@@ -25,7 +25,7 @@ public abstract class Card {
     public Card() {
         draw = null;
         search = null;
-        food = null;
+        hunt = null;
         medicine = null;
         combat = null;
         population = null;
@@ -44,8 +44,8 @@ public abstract class Card {
         return search.getValue();
     }
     
-    public int getFood() {
-        return food.getValue();
+    public int getHunt() {
+        return hunt.getValue();
     }
 
     public int getMedicine() {

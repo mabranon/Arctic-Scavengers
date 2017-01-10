@@ -13,7 +13,7 @@ public class MultitoolCard extends Card{
     
     public MultitoolCard(){
         search = new ModifierAttribute(1);
-        food = new ModifierAttribute(1);
+        hunt = new ModifierAttribute(1);
         combat = new ModifierAttribute(1);
         
         type = CardType.TOOL;

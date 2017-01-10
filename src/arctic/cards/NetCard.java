@@ -12,7 +12,7 @@ package arctic.cards;
 public class NetCard extends Card{
     
     public NetCard(){
-        food = new ModifierAttribute(2);
+        hunt = new ModifierAttribute(2);
         combat = new ModifierAttribute(1); 
         
         type = CardType.TOOL;

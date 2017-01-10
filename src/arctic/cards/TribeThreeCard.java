@@ -12,7 +12,7 @@ package arctic.cards;
 public class TribeThreeCard extends Card{
     
     public TribeThreeCard(){
-        food = new StandardAttribute(0);
+        hunt = new StandardAttribute(0);
         combat = new StandardAttribute(0);
         population = new StandardAttribute(3);
         

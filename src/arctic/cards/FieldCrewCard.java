@@ -13,7 +13,7 @@ public class FieldCrewCard extends Card{
     
     public FieldCrewCard(){
         search = new StandardAttribute(2);
-        food = new StandardAttribute(2);
+        hunt = new StandardAttribute(2);
         combat = new StandardAttribute(2);
         population = new StandardAttribute(4);
         

@@ -12,7 +12,7 @@ package arctic.cards;
 public class WolfPackCard extends Card{
     
     public WolfPackCard(){
-        food = new ModifierAttribute(3);
+        hunt = new ModifierAttribute(3);
         combat = new ModifierAttribute(2);
         
         type = CardType.TOOL;

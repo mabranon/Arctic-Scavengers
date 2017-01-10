@@ -16,7 +16,7 @@ public class GroupLeadersCard extends Card{
         
         draw = new ModifierAttribute(2);
         search = new ModifierAttribute(2);
-        food = new ModifierAttribute(2);
+        hunt = new ModifierAttribute(2);
         combat = new ModifierAttribute(2);
         
         type = CardType.TRIBE;

@@ -44,7 +44,7 @@ public class Game {
     
     /**
      * Method draws X cards where X is the draw value of cards played
-     * @param cardsPlayed 
+     * @param cardsPlayed list of cards
      */
     public void drawAction(List<Card> cardsPlayed){
         int numCardsToDraw = 0;
@@ -55,6 +55,17 @@ public class Game {
         }
         
         playerTakingTurn.draw(numCardsToDraw);
+    }
+    
+    /**
+     * Method adds card list's hunt values to current players food stores
+     * @param cardsPlayed list of cards
+     */
+    public void huntAction(List<Card> cardsPlayed){      
+        for(Card card : cardsPlayed){
+            playerTakingTurn.addToFoodStore(card.getHunt());
+            playerTakingTurn.discardFromHand(card);
+        }
     }
            
     /**

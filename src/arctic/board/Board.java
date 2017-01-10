@@ -47,6 +47,13 @@ public class Board {
         junkyard.add(cardsIgnored);
     }
     
+    /**
+     * shuffles the junkyard
+     */
+    public void shuffleJunkyard(){
+        junkyard.shuffle();
+    }
+    
     public Market getMarket(){
         return market;
     }

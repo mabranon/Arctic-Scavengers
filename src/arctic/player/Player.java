@@ -78,6 +78,10 @@ public class Player {
         return hand;
     }
     
+    /**
+     * Removes a list of cards from the player's hand.
+     * @param cardsToTrash 
+     */
     public void trash(List<Card> cardsToTrash){
         hand.removeAll(cardsToTrash);
     }

@@ -13,7 +13,7 @@ public class SniperTeamCard extends Card implements SpecialAction{
     
     public SniperTeamCard(){
  
-        population = 2;
+        population = new StandardAttribute(2);
         
         type = CardType.TRIBE;
         name = CardName.SNIPER_TEAMS;

@@ -12,9 +12,9 @@ package arctic.cards;
 public class SaboteurCard extends Card implements SpecialAction{
     
     public SaboteurCard(){
-        search = 1;
-        combat = 1;
-        population = 1;
+        search = new StandardAttribute(1);
+        combat = new StandardAttribute(1);
+        population = new StandardAttribute(1);
         
         type = CardType.TRIBE;
         name = CardName.SABOTEUR;

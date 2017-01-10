@@ -50,11 +50,7 @@ public class Game {
         int numCardsToDraw = 0;
         
         for(Card card : cardsPlayed){
-            if(card.getDraw() != null){
-                numCardsToDraw += card.getDraw();
-            }else if(card.getAugDraw() != null){
-                numCardsToDraw += card.getAugDraw();
-            }
+            numCardsToDraw += card.getDraw();
             playerTakingTurn.discardFromHand(card);
         }
         

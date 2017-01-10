@@ -12,8 +12,8 @@ package arctic.cards;
 public class SpearCard extends Card{
     
     public SpearCard(){
-        augFood = 1;
-        augCombat = 2;
+        food = new ModifierAttribute(1);
+        combat = new ModifierAttribute(2);
         
         type = CardType.TOOL;
         name = CardName.SPEAR;

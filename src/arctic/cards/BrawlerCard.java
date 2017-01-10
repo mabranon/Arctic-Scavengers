@@ -12,9 +12,9 @@ package arctic.cards;
 public class BrawlerCard extends Card{
     
     public BrawlerCard(){
-        search = 1;
-        combat = 2;
-        population = 1;
+        search = new StandardAttribute(1);
+        combat = new StandardAttribute(2);
+        population = new StandardAttribute(1);
         
         name = CardName.BRAWLER;
         type = CardType.TRIBE;

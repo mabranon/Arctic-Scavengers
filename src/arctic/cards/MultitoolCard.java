@@ -12,9 +12,9 @@ package arctic.cards;
 public class MultitoolCard extends Card{
     
     public MultitoolCard(){
-        augSearch = 1;
-        augFood = 1;
-        augCombat = 1;
+        search = new ModifierAttribute(1);
+        food = new ModifierAttribute(1);
+        combat = new ModifierAttribute(1);
         
         type = CardType.TOOL;
         name = CardName.MULTITOOL;

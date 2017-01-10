@@ -12,7 +12,7 @@ package arctic.cards;
 public class MedkitCard extends Card{
     
     public MedkitCard(){
-        medicine = 2;
+        medicine = new StandardAttribute(2);
         
         type = CardType.MEDS;
         name = CardName.MEDKIT;

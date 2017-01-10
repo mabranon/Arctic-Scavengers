@@ -12,8 +12,8 @@ package arctic.cards;
 public class ShovelCard extends Card{
     
     public ShovelCard(){
-        augSearch = 2;
-        augCombat = 1;
+        search = new ModifierAttribute(2);
+        combat = new ModifierAttribute(1);
         
         type = CardType.TOOL;
         name = CardName.SHOVEL;

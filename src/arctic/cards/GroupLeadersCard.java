@@ -12,12 +12,12 @@ package arctic.cards;
 public class GroupLeadersCard extends Card{
     
     public GroupLeadersCard(){
-        population = 2;
+        population = new StandardAttribute(2);
         
-        augDraw = 2;
-        augSearch = 2;
-        augFood = 2;
-        augCombat = 2;
+        draw = new ModifierAttribute(2);
+        search = new ModifierAttribute(2);
+        food = new ModifierAttribute(2);
+        combat = new ModifierAttribute(2);
         
         type = CardType.TRIBE;
         name = CardName.GROUP_LEADERS;

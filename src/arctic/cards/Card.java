@@ -10,18 +10,12 @@ package arctic.cards;
  * @author Joshua
  */
 public abstract class Card {
-    Integer draw;
-    Integer search;
-    Integer food;
-    Integer medicine;
-    Integer combat;
-    Integer population;
-
-    Integer augDraw;
-    Integer augSearch;
-    Integer augFood;
-    Integer augMedicine;
-    Integer augCombat;
+    Attribute draw;
+    Attribute search;
+    Attribute food;
+    Attribute medicine;
+    Attribute combat;
+    Attribute population;
     
     CardType type;
     CardName name;
@@ -35,12 +29,6 @@ public abstract class Card {
         medicine = null;
         combat = null;
         population = null;
-
-        augDraw = null;
-        augSearch = null;
-        augFood = null;
-        augMedicine = null;
-        augCombat = null;
         
         type = null;
         name = null;
@@ -48,100 +36,38 @@ public abstract class Card {
         contested = false;
     }
 
-    /**
-     * @return the draw value of the card
-     */
-    public Integer getDraw() {
-        return draw;
+    public int getDraw() {
+        return draw.getValue();
     }
 
-    /**
-     * @return the search value of the card
-     */
-    public Integer getSearch() {
-        return search;
+    public int getSearch() {
+        return search.getValue();
+    }
+    
+    public int getFood() {
+        return food.getValue();
     }
 
-    /**
-     * @return the food value of the card
-     */
-    public Integer getFood() {
-        return food;
+    public int getMedicine() {
+        return medicine.getValue();
     }
 
-    /**
-     * @return the medicine value of the card
-     */
-    public Integer getMedicine() {
-        return medicine;
+    public int getCombat() {
+        return combat.getValue();
+    }
+   
+    public int getPopulation() {
+        return population.getValue();
     }
 
-    /**
-     * @return the combat value of the card
-     */
-    public Integer getCombat() {
-        return combat;
-    }
-
-    /**
-     * @return the population value of the card
-     */
-    public Integer getPopulation() {
-        return population;
-    }
-
-    /**
-     * @return the augDraw value of the card
-     */
-    public Integer getAugDraw() {
-        return augDraw;
-    }
-
-    /**
-     * @return the augSearch value of the card
-     */
-    public Integer getAugSearch() {
-        return augSearch;
-    }
-
-    /**
-     * @return the augFood value of the card
-     */
-    public Integer getAugFood() {
-        return augFood;
-    }
-
-    /**
-     * @return the augMedicine value of the card
-     */
-    public Integer getAugMedicine() {
-        return augMedicine;
-    }
-
-    /**
-     * @return the augCombat value of the card
-     */
-    public Integer getAugCombat() {
-        return augCombat;
-    }
-
-    /**
-     * @return the type of the card
-     */
     public CardType getType() {
         return type;
     }
 
-    /**
-     * @return the name of the card 
-     */
     public CardName getCardName(){
         return name;
     }
-    
-    /**
-     * @return id the card is a contested card
-     */
+       
     public boolean isContested() {
         return contested;
     }

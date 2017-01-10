@@ -12,8 +12,8 @@ package arctic.cards;
 public class NetCard extends Card{
     
     public NetCard(){
-        augFood = 2;
-        augCombat = 1; 
+        food = new ModifierAttribute(2);
+        combat = new ModifierAttribute(1); 
         
         type = CardType.TOOL;
         name = CardName.NET;

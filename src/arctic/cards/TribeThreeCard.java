@@ -12,9 +12,9 @@ package arctic.cards;
 public class TribeThreeCard extends Card{
     
     public TribeThreeCard(){
-        food = 0;
-        combat = 0;
-        population = 3;
+        food = new StandardAttribute(0);
+        combat = new StandardAttribute(0);
+        population = new StandardAttribute(3);
         
         type = CardType.TRIBE;
         name = CardName.TRIBE_FAMILY_3;

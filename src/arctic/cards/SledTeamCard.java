@@ -12,9 +12,9 @@ package arctic.cards;
 public class SledTeamCard extends Card{
     
     public SledTeamCard(){
-        draw = 2;
-        combat  = 1;
-        population = 2;
+        draw = new StandardAttribute(2);
+        combat  = new StandardAttribute(1);
+        population = new StandardAttribute(2);
         
         type = CardType.TRIBE;
         name = CardName.SLED_TEAM;

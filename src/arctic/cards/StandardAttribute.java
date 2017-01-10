@@ -7,15 +7,12 @@ package arctic.cards;
 
 /**
  *
- * @author Joshua
+ * @author AppleGrocer
  */
-public class PillsCard extends Card{
+public class StandardAttribute extends Attribute{
     
-    public PillsCard(){
-        medicine = new StandardAttribute(1);
-        
-        type = CardType.MEDS;
-        name = CardName.PILLS;
+    public StandardAttribute(int value) {
+        super(AttributeType.STANDARD_ACTION, value);
     }
     
 }

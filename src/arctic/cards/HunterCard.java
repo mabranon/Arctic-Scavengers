@@ -12,9 +12,9 @@ package arctic.cards;
 public class HunterCard extends Card{
     
     public HunterCard(){
-        food = 2;
-        combat = 1;
-        population = 1;
+        food = new StandardAttribute(2);
+        combat = new StandardAttribute(1);
+        population = new StandardAttribute(1);
         
         type = CardType.TRIBE;
         name = CardName.HUNTER;

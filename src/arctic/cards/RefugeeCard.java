@@ -12,9 +12,9 @@ package arctic.cards;
 public class RefugeeCard extends Card{
     
     public RefugeeCard(){
-        search = 0;
-        food = 0;
-        population = 1;   
+        search = new StandardAttribute(0);
+        food = new StandardAttribute(0);
+        population = new StandardAttribute(1);   
         
         type = CardType.TRIBE;
         name = CardName.REFUGEE;

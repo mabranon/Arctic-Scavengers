@@ -12,11 +12,11 @@ package arctic.cards;
 public class ScavengerCard extends Card{
     
     public ScavengerCard(){
-        draw = 1;
-        search = 1;
-        food = 1;
-        combat = 1;
-        population = 1;   
+        draw = new StandardAttribute(1);
+        search = new StandardAttribute(1);
+        food = new StandardAttribute(1);
+        combat = new StandardAttribute(1);
+        population = new StandardAttribute(1);   
         
         type = CardType.TRIBE;
         name = CardName.SCAVENGER;

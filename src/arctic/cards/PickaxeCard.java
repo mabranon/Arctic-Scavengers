@@ -12,8 +12,8 @@ package arctic.cards;
 public class PickaxeCard extends Card{
     
     public PickaxeCard(){
-        augSearch = 1;
-        augCombat = 2;
+        search = new ModifierAttribute(1);
+        combat = new ModifierAttribute(2);
         
         type = CardType.TOOL;
         name = CardName.PICKAXE;

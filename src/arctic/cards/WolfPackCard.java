@@ -12,8 +12,8 @@ package arctic.cards;
 public class WolfPackCard extends Card{
     
     public WolfPackCard(){
-        augFood = 3;
-        augCombat = 2;
+        food = new ModifierAttribute(3);
+        combat = new ModifierAttribute(2);
         
         type = CardType.TOOL;
         name = CardName.WOLF_PACK;

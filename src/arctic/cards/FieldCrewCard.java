@@ -12,10 +12,10 @@ package arctic.cards;
 public class FieldCrewCard extends Card{
     
     public FieldCrewCard(){
-        search = 2;
-        food = 2;
-        combat = 2;
-        population = 4;
+        search = new StandardAttribute(2);
+        food = new StandardAttribute(2);
+        combat = new StandardAttribute(2);
+        population = new StandardAttribute(4);
         
         type = CardType.TRIBE;
         name = CardName.FIELD_CREW;

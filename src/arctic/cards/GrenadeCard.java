@@ -12,7 +12,7 @@ package arctic.cards;
 public class GrenadeCard extends Card{
     
     public GrenadeCard(){
-        augCombat = 3;
+        combat = new ModifierAttribute(3);
         
         type = CardType.TOOL;
         name = CardName.GRENADE;

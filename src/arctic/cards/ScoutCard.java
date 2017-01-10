@@ -12,9 +12,9 @@ package arctic.cards;
 public class ScoutCard extends Card{
     
     public ScoutCard(){
-        draw = 2;
-        combat = 2;
-        population = 1;
+        draw = new StandardAttribute(2);
+        combat = new StandardAttribute(2);
+        population = new StandardAttribute(1);
         
         type = CardType.TRIBE;
         name = CardName.SCOUT;

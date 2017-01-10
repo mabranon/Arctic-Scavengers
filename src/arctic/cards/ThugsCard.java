@@ -12,9 +12,9 @@ package arctic.cards;
 public class ThugsCard extends Card{
     
     public ThugsCard(){
-        search = 1;
-        combat = 3;
-        population = 3;
+        search = new StandardAttribute(1);
+        combat = new StandardAttribute(3);
+        population = new StandardAttribute(3);
         
         type = CardType.TRIBE;
         name = CardName.THUGS;

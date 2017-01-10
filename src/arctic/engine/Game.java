@@ -24,7 +24,7 @@ public class Game {
     private final Board board;
     private final List<Player> playerList;
     private Player initiatorPlayer;
-    private Player playerTakingTurn;
+    private Player currentPlayer;
     
     public Game(int numPlayers){
         this.numPlayers = numPlayers;
@@ -39,11 +39,12 @@ public class Game {
         
         // randomly picks first initiator
         initiatorPlayer = playerList.get(new Random().nextInt(numPlayers));
-        playerTakingTurn = initiatorPlayer;
+        currentPlayer = initiatorPlayer;
     }
     
     /**
-     * Method draws X cards where X is the draw value of cards played
+     * The current player draws a number of cards from their deck equal to the 
+     * total draw value of the cards played
      * @param cardsPlayed list of cards
      */
     public void drawAction(List<Card> cardsPlayed){
@@ -51,21 +52,52 @@ public class Game {
         
         for(Card card : cardsPlayed){
             numCardsToDraw += card.getDraw();
-            playerTakingTurn.discardFromHand(card);
+            currentPlayer.discardFromHand(card);
         }
         
-        playerTakingTurn.draw(numCardsToDraw);
+        currentPlayer.draw(numCardsToDraw);
     }
     
     /**
-     * Method adds card list's hunt values to current players food stores
+     * Adds an amount of food to the current players food stores equal to the 
+     * total hunt value of the cards played
      * @param cardsPlayed list of cards
      */
     public void huntAction(List<Card> cardsPlayed){      
         for(Card card : cardsPlayed){
-            playerTakingTurn.addToFoodStore(card.getHunt());
-            playerTakingTurn.discardFromHand(card);
+            currentPlayer.addToFoodStore(card.getHunt());
+            currentPlayer.discardFromHand(card);
         }
+    }
+    
+    /**
+     * The current player searches the junkyard for a number of cards equal to 
+     * the total search value of the cards played
+     * @param cardsPlayed list of cards
+     * @return a list of cards found in the junkyard
+     */
+    public List<Card> searchJunkyard(List<Card> cardsPlayed){
+        List cardsFound = new ArrayList<>();
+        
+        for(Card card : cardsPlayed){
+            for(int i=0; i<card.getSearch(); i++){
+                cardsFound.add(board.drawFromJunkyard());
+            }
+        }
+        
+        return cardsFound;
+    }
+    
+    public void salvageFromJunkyard(Card cardSalvaged){
+        currentPlayer.addCardToDiscardPile(cardSalvaged);
+    }
+    
+    /**
+     * The list of cards is returned to the bottom of the junkyard
+     * @param cardsNotChosen list of cards
+     */
+    public void returnToJunkyard(List<Card> cardsNotChosen){
+        board.returnToJunkyard(cardsNotChosen);
     }
            
     /**
@@ -73,8 +105,8 @@ public class Game {
      * passing play
      */
     public void completeTurn(){
-        playerTakingTurn.resetStores();
-        playerTakingTurn = nextPlayer(playerTakingTurn);
+        currentPlayer.resetStores();
+        currentPlayer = nextPlayer(currentPlayer);
     }
     
     /**
@@ -83,10 +115,15 @@ public class Game {
      */
     public void passInitiative(){
         initiatorPlayer = nextPlayer(initiatorPlayer);
-        playerTakingTurn = initiatorPlayer;
+        currentPlayer = initiatorPlayer;
     }
     
-    private Player nextPlayer(Player currentPlayer){
-        return playerList.get(playerList.indexOf(currentPlayer)+1 % numPlayers);
+    /**
+     * Calculates the next player in turn order
+     * @param player
+     * @return next player in turn order
+     */
+    private Player nextPlayer(Player player){
+        return playerList.get(playerList.indexOf(player)+1 % numPlayers);
     }
 }

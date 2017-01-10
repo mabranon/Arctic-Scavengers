@@ -54,7 +54,7 @@ public class Deck {
     }
     
     /**
-     * adds a card to the deck
+     * adds a card to the bottom of the deck
      * @param card 
      */
     public void add(Card card){
@@ -62,7 +62,7 @@ public class Deck {
     }
     
     /**
-     * adds a list of cards to the deck
+     * adds a list of cards to the bottom of the deck
      * @param list 
      */
     public void add(List<Card> list){

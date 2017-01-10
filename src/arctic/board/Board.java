@@ -5,12 +5,10 @@
  */
 package arctic.board;
 
+import arctic.cards.Card;
 import arctic.communal_decks.ContestedResources;
 import arctic.communal_decks.Junkyard;
 import arctic.communal_decks.Market;
-import arctic.player.Player;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,8 +31,20 @@ public class Board {
         contestedResources = new ContestedResources();        
     }
     
-    public Junkyard getJunkyard(){
-        return junkyard;
+    /**
+     * Draws the top card of the junkyard
+     * @return a card
+     */
+    public Card drawFromJunkyard(){
+        return junkyard.draw();
+    }
+    
+    /**
+     * Adds a list of cards to the bottom of the junkyard
+     * @param cardsIgnored a list of cards 
+     */
+    public void returnToJunkyard(List<Card> cardsIgnored){
+        junkyard.add(cardsIgnored);
     }
     
     public Market getMarket(){

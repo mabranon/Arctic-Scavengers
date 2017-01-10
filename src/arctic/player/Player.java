@@ -43,7 +43,7 @@ public class Player {
      */
     public void drawNewHand(){
         for(int i=0; i<5; i++){
-            hand.add(getDeck().draw());
+            hand.add(deck.draw());
         }
     }
 
@@ -70,13 +70,6 @@ public class Player {
         hand.remove(discardedCard);
         discardPile.add(discardedCard);
     }
-    
-    /**
-     * @return the player's current deck
-     */
-    public PlayerDeck getDeck() {
-        return deck;
-    }
 
     /**
      * @return the player's current hand
@@ -90,10 +83,11 @@ public class Player {
     }
     
     /**
-     * @return the players discard pile 
+     * Adds the passed card to the bottom of the player's discard pile
+     * @param card 
      */
-    public List getDiscardPile(){
-        return discardPile;
+    public void addCardToDiscardPile(Card card){
+        discardPile.add(card);
     }
     
     /**

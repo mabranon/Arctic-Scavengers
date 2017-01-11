@@ -6,7 +6,7 @@
 package arctic.communal_decks;
 
 import arctic.cards.BrawlerCard;
-import arctic.cards.CardName;
+import arctic.cards.Card;
 import arctic.cards.GroupLeadersCard;
 import arctic.cards.HunterCard;
 import arctic.cards.SaboteurCard;
@@ -64,5 +64,37 @@ public class Market {
         for (int i = 0; i < 20 - (numPlayers * 3); i++) {
             scavengers.add(new ScavengerCard());
         }
+    }
+    
+    public Card hireBrawler(){
+        return brawlers.draw();
+    }
+    
+    public Card hireHunter(){
+        return hunters.draw();
+    }
+    
+    public Card hireSaboteur(){
+        return saboteurs.draw();
+    }
+    
+    public Card hireScout(){
+        return scouts.draw();
+    }
+    
+    public Card hireGroupLeaders(){
+        return groupLeaders.draw();
+    }
+    
+    public Card hireSniperTeam(){
+        return sniperTeams.draw();
+    }
+    
+    public Card hireThugs(){
+        return thugs.draw();
+    }
+    
+    public Card hireScavenger(){
+        return scavengers.draw();
     }
 }

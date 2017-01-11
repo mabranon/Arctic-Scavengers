@@ -6,6 +6,7 @@
 package arctic.board;
 
 import arctic.cards.Card;
+import arctic.cards.CardName;
 import arctic.communal_decks.ContestedResources;
 import arctic.communal_decks.Junkyard;
 import arctic.communal_decks.Market;
@@ -54,8 +55,28 @@ public class Board {
         junkyard.shuffle();
     }
     
-    public Market getMarket(){
-        return market;
+    public Card hireFromMarket(CardName cardName){
+        switch(cardName){
+            case BRAWLER:
+                return market.hireBrawler();
+            case HUNTER:
+                return market.hireHunter();
+            case SABOTEUR:
+                return market.hireSaboteur();
+            case SCOUT:
+                return market.hireScout();
+            case GROUP_LEADERS:
+                return market.hireGroupLeaders();
+            case SNIPER_TEAMS:
+                return market.hireSniperTeam();
+            case THUGS:
+                return market.hireThugs();
+            case SCAVENGER:
+                return market.hireScavenger();
+            default:
+                throw new IllegalArgumentException("invalid CardName for "
+                        + "mercenary market");
+        }
     }
     
     public ContestedResources getContestedResources(){

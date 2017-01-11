@@ -107,6 +107,12 @@ public class Game {
         board.returnToJunkyard(cardsNotChosen);
     }
 
+    public void recruit(Card recruitedCard){
+        currentPlayer.addCardToDiscardPile(
+                board.hireFromMarket(recruitedCard.getCardName())
+        );
+    }
+    
     /**
      * Throws a list of cards away from the player's hand into the junkyard, 
      * then shuffles the junkyard.

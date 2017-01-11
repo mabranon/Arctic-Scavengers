@@ -106,10 +106,15 @@ public class Game {
     public void returnToJunkyard(List<Card> cardsNotChosen) {
         board.returnToJunkyard(cardsNotChosen);
     }
-
+    
+    /**
+     * Removes the specified card from the market and adds it to the bottom of the 
+     * current player's discard pile
+     * @param recruitedCard Card to recruit - must be a valid market card
+     */
     public void recruit(Card recruitedCard){
         currentPlayer.addCardToDiscardPile(
-                board.hireFromMarket(recruitedCard.getCardName())
+                board.drawFromMarket(recruitedCard.getCardName())
         );
     }
     

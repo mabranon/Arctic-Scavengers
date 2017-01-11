@@ -55,28 +55,13 @@ public class Board {
         junkyard.shuffle();
     }
     
-    public Card hireFromMarket(CardName cardName){
-        switch(cardName){
-            case BRAWLER:
-                return market.hireBrawler();
-            case HUNTER:
-                return market.hireHunter();
-            case SABOTEUR:
-                return market.hireSaboteur();
-            case SCOUT:
-                return market.hireScout();
-            case GROUP_LEADERS:
-                return market.hireGroupLeaders();
-            case SNIPER_TEAMS:
-                return market.hireSniperTeam();
-            case THUGS:
-                return market.hireThugs();
-            case SCAVENGER:
-                return market.hireScavenger();
-            default:
-                throw new IllegalArgumentException("invalid CardName for "
-                        + "mercenary market");
-        }
+    /**
+     * Draws the appropriate card from the market place
+     * @param cardName
+     * @return 
+     */
+    public Card drawFromMarket(CardName cardName){
+        return market.draw(cardName);
     }
     
     public ContestedResources getContestedResources(){

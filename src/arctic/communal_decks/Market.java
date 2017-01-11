@@ -7,6 +7,8 @@ package arctic.communal_decks;
 
 import arctic.cards.BrawlerCard;
 import arctic.cards.Card;
+import arctic.cards.CardName;
+import static arctic.cards.CardName.*;
 import arctic.cards.GroupLeadersCard;
 import arctic.cards.HunterCard;
 import arctic.cards.SaboteurCard;
@@ -66,35 +68,33 @@ public class Market {
         }
     }
     
-    public Card hireBrawler(){
-        return brawlers.draw();
-    }
-    
-    public Card hireHunter(){
-        return hunters.draw();
-    }
-    
-    public Card hireSaboteur(){
-        return saboteurs.draw();
-    }
-    
-    public Card hireScout(){
-        return scouts.draw();
-    }
-    
-    public Card hireGroupLeaders(){
-        return groupLeaders.draw();
-    }
-    
-    public Card hireSniperTeam(){
-        return sniperTeams.draw();
-    }
-    
-    public Card hireThugs(){
-        return thugs.draw();
-    }
-    
-    public Card hireScavenger(){
-        return scavengers.draw();
+    /**
+     * Draws a Card with the specified CardName from the market
+     * @param cardName CardName - throws IllegalArgumentException if card does 
+     * not exist in the market
+     * @return Card
+     */
+    public Card draw(CardName cardName){
+        switch(cardName){
+            case BRAWLER:
+                return brawlers.draw();
+            case HUNTER:
+                return hunters.draw();
+            case SABOTEUR:
+                return saboteurs.draw();
+            case SCOUT:
+                return scouts.draw();
+            case GROUP_LEADERS:
+                return groupLeaders.draw();
+            case SNIPER_TEAMS:
+                return sniperTeams.draw();
+            case THUGS:
+                return thugs.draw();
+            case SCAVENGER:
+                return scavengers.draw();
+            default:
+                throw new IllegalArgumentException("invalid CardName for "
+                        + "mercenary market");
+        }
     }
 }

@@ -5,9 +5,15 @@
  */
 package arctic.gui;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -26,8 +32,18 @@ public class StartPageController{
     private Button exitBtn;
     
     @FXML
-    private void startNewGame(ActionEvent event){
-        System.out.println("pressed new game button");
+    private void startNewGame(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/fxml/NumPlayersWindow.fxml")
+        );
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        
+        stage.setScene(new Scene(root));
+        stage.setTitle("Choose Number of Players");
+        stage.initOwner(newGameBtn.getScene().getWindow());
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
     }
     
     @FXML

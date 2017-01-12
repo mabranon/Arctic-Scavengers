@@ -25,11 +25,10 @@ public class ArcticScavengersApp extends Application{
                 );
 
         Scene scene = new Scene(root);
-
+        stage.setScene(scene);
+        stage.setTitle("Welcome to Arctic Scavengers");
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
-        stage.setTitle("Welcome to Arctic Scavengers");
-        stage.setScene(scene);
         stage.show();
     }
     

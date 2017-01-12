@@ -30,7 +30,7 @@ public class Board {
         junkyard = new Junkyard(this.numPlayers);
         market = new Market(this.numPlayers);
         contestedResources = new ContestedResources();        
-    }
+    }    
     
     /**
      * Draws the top card of the junkyard

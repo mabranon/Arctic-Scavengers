@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="arctic.gui.StartPageController">
+   <children>
+      <VBox alignment="CENTER" layoutX="665.0" layoutY="394.0" prefHeight="293.0" prefWidth="590.0" spacing="15.0">
+         <children>
+            <Label text="Arctic Scavengers">
+               <padding>
+                  <Insets bottom="30.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <Button fx:id="newGameBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#startNewGame" prefHeight="40.0" prefWidth="145.0" text="New Game">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="loadGameBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openSavedGameMenu" prefHeight="40.0" prefWidth="145.0" text="Load Game">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="optionsBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openOptionsMenu" prefHeight="40.0" prefWidth="145.0" text="Options">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exitGame" prefHeight="40.0" prefWidth="145.0" text="Exit to Desktop">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

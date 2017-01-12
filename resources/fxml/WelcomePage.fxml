@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="arctic.gui.WelcomePageController">
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arctic.gui.WelcomePageController">
    <children>
       <VBox alignment="CENTER" layoutX="660.0" layoutY="240.0" prefHeight="600.0" prefWidth="600.0" spacing="30.0">
          <children>
@@ -17,7 +16,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="startLabel" onMouseClicked="#continueToMainPage" text="Click Here to Continue">
+            <Label fx:id="startLabel" onMouseClicked="#continueToStartPage" text="Click Here to Continue">
                <font>
                   <Font size="18.0" />
                </font>

@@ -21,7 +21,8 @@ import javafx.stage.Stage;
  *
  * @author AppleGrocer
  */
-public class NumPlayersWindowController implements Initializable{
+public class NumPlayersWindowController extends ControlledScreen 
+        implements Initializable{
     @FXML
     private ChoiceBox numberListCBox;
     @FXML

@@ -15,25 +15,28 @@ import javafx.stage.Stage;
  *
  * @author AppleGrocer
  */
-public class ArcticScavengersApp extends Application{
+public class ArcticScavengersApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = 
-                FXMLLoader.load(
-                        getClass().getResource("/fxml/WelcomePage.fxml")
-                );
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/fxml/MainPane.fxml")
+        );
 
+        Parent root = loader.load();
+        
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Welcome to Arctic Scavengers");
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
+        
+        loader.<MainPaneController>getController().init();
         stage.show();
     }
-    
+
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

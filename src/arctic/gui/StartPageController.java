@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -29,10 +30,7 @@ public class StartPageController extends ControlledScreen{
     
     @FXML
     private void startNewGame(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/fxml/NumPlayersWindow.fxml")
-        );
-        parentPane.replaceScreen(loader.load());
+        mainControl.replaceScreen(MainPaneController.NUM_PLAYERS_SCREEN);
     }
     
     @FXML
@@ -47,7 +45,8 @@ public class StartPageController extends ControlledScreen{
     
     @FXML
     private void exitGame(ActionEvent event){
-        System.out.println("pressed exit button");
+        Stage stage= (Stage)exitBtn.getScene().getWindow();
+        stage.close();;
     }
     
 }

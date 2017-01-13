@@ -11,9 +11,9 @@ package arctic.gui;
  */
 public abstract class ControlledScreen {
     
-    MainPaneController parentPane;
-    
+    MainPaneController mainControl;
+        
     public void setParent(MainPaneController mainControl){
-        parentPane = mainControl;
+        this.mainControl = mainControl;
     }
 }

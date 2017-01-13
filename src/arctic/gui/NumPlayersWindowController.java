@@ -5,24 +5,24 @@
  */
 package arctic.gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author AppleGrocer
  */
-public class NumPlayersWindowController extends ControlledScreen 
-        implements Initializable{
+public class NumPlayersWindowController extends ControlledScreen implements Initializable{
     @FXML
     private ChoiceBox numberListCBox;
     @FXML
@@ -52,8 +52,7 @@ public class NumPlayersWindowController extends ControlledScreen
     }
     
     @FXML
-    private void cancelToStartScreen(ActionEvent event){
-        Stage stage= (Stage)cancelBtn.getScene().getWindow();
-        stage.close();
+    private void cancelToStartScreen(ActionEvent event) throws IOException{
+        mainControl.replaceScreen(MainPaneController.START_SCREEN);
     }        
 }

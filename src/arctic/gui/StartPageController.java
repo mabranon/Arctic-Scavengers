@@ -30,7 +30,7 @@ public class StartPageController extends ControlledScreen{
     
     @FXML
     private void startNewGame(ActionEvent event) throws IOException{
-        mainControl.replaceScreen(MainPaneController.NUM_PLAYERS_SCREEN);
+        mainControl.replaceScreen(ScreenKey.NUM_PLAYERS_SCREEN);
     }
     
     @FXML

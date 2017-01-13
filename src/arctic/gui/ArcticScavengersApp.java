@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 public class ArcticScavengersApp extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws Exception {        
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/fxml/MainPane.fxml")
         );
@@ -30,8 +30,6 @@ public class ArcticScavengersApp extends Application {
         stage.setTitle("Welcome to Arctic Scavengers");
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
-        
-        loader.<MainPaneController>getController().init();
         stage.show();
     }
 

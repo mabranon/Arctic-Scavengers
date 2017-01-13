@@ -6,9 +6,12 @@
 package arctic.gui;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
 
@@ -17,38 +20,40 @@ import javafx.scene.layout.StackPane;
  *
  * @author AppleGrocer
  */
-public class MainPaneController {
+public class MainPaneController implements Initializable{
     
-    public static final String START_SCREEN = "/fxml/StartPage.fxml";
-    public static final String NUM_PLAYERS_SCREEN = 
-            "/fxml/NumPlayersWindow.fxml";
-    
-    private final HashMap<String, Node> screenMap = new HashMap<>();
+    private final HashMap<ScreenKey, Node> screenMap = new HashMap<>();
 
     @FXML
     private StackPane mainPane;
 
-    public void init() throws IOException{
+    @Override
+    public void initialize(URL location, ResourceBundle resources){
+        loadScreens();
+        mainPane.getChildren().add(screenMap.get(ScreenKey.START_SCREEN));
+    }
+    
+    private void loadScreens(){
+        try{
         FXMLLoader loader;
         loader = new FXMLLoader(
                 getClass().getResource("/fxml/StartPage.fxml")
         );
-        screenMap.put(START_SCREEN, loader.load());
+        screenMap.put(ScreenKey.START_SCREEN, loader.load());
         loader.<ControlledScreen>getController().setParent(this);
         
         loader = new FXMLLoader(
                 getClass().getResource("/fxml/NumPlayersWindow.fxml")
         );
-        screenMap.put(NUM_PLAYERS_SCREEN, loader.load());
+        screenMap.put(ScreenKey.NUM_PLAYERS_SCREEN, loader.load());
         loader.<ControlledScreen>getController().setParent(this);
-        
-        mainPane.getChildren().add(screenMap.get(START_SCREEN));
-        
-        
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }
     }
     
-    public void replaceScreen(String screen){
+    public void replaceScreen(ScreenKey key){
         mainPane.getChildren().remove(0);
-        mainPane.getChildren().add(screenMap.get(screen));
+        mainPane.getChildren().add(screenMap.get(key));
     }
 }

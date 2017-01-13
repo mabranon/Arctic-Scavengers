@@ -53,6 +53,6 @@ public class NumPlayersWindowController extends ControlledScreen implements Init
     
     @FXML
     private void cancelToStartScreen(ActionEvent event) throws IOException{
-        mainControl.replaceScreen(MainPaneController.START_SCREEN);
+        mainControl.replaceScreen(ScreenKey.START_SCREEN);
     }        
 }

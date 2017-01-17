@@ -54,6 +54,10 @@ public class Playmat_5Controller extends ControlledScreen implements Playmat {
         tableDrawsHand();
     }
 
+    /**
+     * starting from the currently active player, goes around the table and
+     * draws new hands for all players
+     */
     private void tableDrawsHand() {
         Player playerDrawing = gameModel.getCurrentPlayer();
         do {
@@ -64,6 +68,9 @@ public class Playmat_5Controller extends ControlledScreen implements Playmat {
     }
 
     @Override
+    /**
+     * adds a player's hand to their corresponding hand area
+     */
     public void updatePlayerHandArea(Player player) {
         try {
             HBox handArea = getPlayerHandArea(player);
@@ -73,6 +80,13 @@ public class Playmat_5Controller extends ControlledScreen implements Playmat {
         }
     }
       
+    /**
+     * associates a given player with a hand area
+     * @param player Player
+     * @return HBox hand area in the gui
+     * @throws PlayerPositionNotFoundException when an error occurs and an 
+     * invalid player position is given 
+     */
     private HBox getPlayerHandArea(Player player)
             throws PlayerPositionNotFoundException {
         switch (player.getPosition()) {
@@ -92,6 +106,13 @@ public class Playmat_5Controller extends ControlledScreen implements Playmat {
         }
     }
     
+    /**
+     * creates and configures the appropriate card image for all cards in a
+     * list, and configuring each before setting them in the appropriate hand
+     * area
+     * @param handArea HBox a hand area
+     * @param hand List of cards
+     */
     private void setHandToHandArea(HBox handArea, List<Card> hand) {
         for (Card card : hand) {
             PlayerCardElement cardImage
@@ -101,6 +122,11 @@ public class Playmat_5Controller extends ControlledScreen implements Playmat {
         }
     }
     
+    /**
+     * configures card elements according to their destination containers
+     * @param cardImage PlayerCardElement to be configured
+     * @param destinationArea Pane destination for card element
+     */
     private void configureCardElement(PlayerCardElement cardImage, 
             Pane destinationArea){
         if(destinationArea == humanHandArea){

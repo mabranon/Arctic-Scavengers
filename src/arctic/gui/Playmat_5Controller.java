@@ -8,12 +8,14 @@ package arctic.gui;
 import arctic.cards.Card;
 import arctic.engine.GameModel;
 import arctic.player.Player;
+import java.util.List;
 
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 
 /**
  *
@@ -44,40 +46,33 @@ public class Playmat_5Controller extends ControlledScreen implements Playmat {
 
         image = new Image(getClass().getResource("/images/CardBase.png").toExternalForm());
         drawPile.setImage(image);
-        
-        startGame();        
+
+        startGame();
     }
-    
-    private void startGame(){
+
+    private void startGame() {
         tableDrawsHand();
     }
-    
-    private void tableDrawsHand(){
+
+    private void tableDrawsHand() {
         Player playerDrawing = gameModel.getCurrentPlayer();
-        do{
+        do {
             gameModel.drawNewPlayerHand(playerDrawing);
             updatePlayerHandArea(playerDrawing);
             playerDrawing = gameModel.nextPlayer(playerDrawing);
-        }while(playerDrawing != gameModel.getCurrentPlayer());
+        } while (playerDrawing != gameModel.getCurrentPlayer());
     }
 
     @Override
     public void updatePlayerHandArea(Player player) {
         try {
             HBox handArea = getPlayerHandArea(player);
-            for(Card card : player.getHand()){
-                PlayerCardElement cardImage = 
-                        new PlayerCardElement(card.getCardName());
-                if(handArea == humanHandArea){
-                    cardImage.setInHumanHand(true);
-                }
-                handArea.getChildren().add(new Group(cardImage));
-            }
+            setHandToHandArea(handArea, player.getHand());
         } catch (PlayerPositionNotFoundException e) {
             System.out.println(e.getMessage());
         }
     }
-
+      
     private HBox getPlayerHandArea(Player player)
             throws PlayerPositionNotFoundException {
         switch (player.getPosition()) {
@@ -92,9 +87,24 @@ public class Playmat_5Controller extends ControlledScreen implements Playmat {
             case 4:
                 return cpu4HandArea;
             default:
-                throw new PlayerPositionNotFoundException(player.getPosition() 
+                throw new PlayerPositionNotFoundException(player.getPosition()
                         + " is not a valid position index");
         }
     }
-
+    
+    private void setHandToHandArea(HBox handArea, List<Card> hand) {
+        for (Card card : hand) {
+            PlayerCardElement cardImage
+                    = new PlayerCardElement(card.getCardName());
+            configureCardElement(cardImage, handArea);
+            handArea.getChildren().add(new Group(cardImage));
+        }
+    }
+    
+    private void configureCardElement(PlayerCardElement cardImage, 
+            Pane destinationArea){
+        if(destinationArea == humanHandArea){
+            cardImage.configForHumanHand(true);
+        }
+    }
 }

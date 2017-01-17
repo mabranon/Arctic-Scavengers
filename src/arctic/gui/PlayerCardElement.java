@@ -67,7 +67,7 @@ public class PlayerCardElement extends ImageView {
         return "/images/CardBase.png";
     }
     
-    public void setInHumanHand(boolean inHand){
+    public void configForHumanHand(boolean inHand){
         zoomable = true;
         setCardSizeLarge();
     }

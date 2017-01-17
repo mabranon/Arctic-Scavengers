@@ -20,40 +20,53 @@ import javafx.scene.layout.StackPane;
  *
  * @author AppleGrocer
  */
-public class MainPaneController implements Initializable{
-    
+public class MainPaneController implements Initializable {
+
     private final HashMap<ScreenKey, Node> screenMap = new HashMap<>();
 
     @FXML
     private StackPane mainPane;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources){
+    public void initialize(URL location, ResourceBundle resources) {
         loadScreens();
         mainPane.getChildren().add(screenMap.get(ScreenKey.START_SCREEN));
     }
-    
-    private void loadScreens(){
-        try{
-        FXMLLoader loader;
-        loader = new FXMLLoader(
-                getClass().getResource("/fxml/StartPage.fxml")
-        );
-        screenMap.put(ScreenKey.START_SCREEN, loader.load());
-        loader.<ControlledScreen>getController().setParent(this);
-        
-        loader = new FXMLLoader(
-                getClass().getResource("/fxml/NumPlayersWindow.fxml")
-        );
-        screenMap.put(ScreenKey.NUM_PLAYERS_SCREEN, loader.load());
-        loader.<ControlledScreen>getController().setParent(this);
-        }catch (IOException e){
+
+    private void loadScreens() {
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader(
+                    getClass().getResource("/fxml/StartPage.fxml")
+            );
+            screenMap.put(ScreenKey.START_SCREEN, loader.load());
+            loader.<ControlledScreen>getController().setParent(this);
+
+            loader = new FXMLLoader(
+                    getClass().getResource("/fxml/NumPlayersWindow.fxml")
+            );
+            screenMap.put(ScreenKey.NUM_PLAYERS_SCREEN, loader.load());
+            loader.<ControlledScreen>getController().setParent(this);
+
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
-    
-    public void replaceScreen(ScreenKey key){
+
+    public void replaceScreen(ScreenKey key) {
         mainPane.getChildren().remove(0);
         mainPane.getChildren().add(screenMap.get(key));
+    }
+
+    public void loadPlaymat5() throws IOException {
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/fxml/Playmat_5.fxml")
+        );
+        mainPane.getChildren().remove(0);
+        mainPane.getChildren().add(loader.load());        
+        Playmat_5Controller controller = 
+                loader.<Playmat_5Controller>getController();
+        controller.setParent(this);
+        controller.initializeGame();
     }
 }

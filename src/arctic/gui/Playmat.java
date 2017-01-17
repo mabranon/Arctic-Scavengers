@@ -5,12 +5,13 @@
  */
 package arctic.gui;
 
+import arctic.player.Player;
+
 /**
  *
  * @author AppleGrocer
  */
-public enum ScreenKey {
-    START_SCREEN,
-    NUM_PLAYERS_SCREEN,
-    PLAYMAT_5_SCREEN
+public interface Playmat {
+    
+    public void updatePlayerHandArea(Player player);
 }

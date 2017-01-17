@@ -22,7 +22,8 @@ import javafx.scene.control.ChoiceBox;
  *
  * @author AppleGrocer
  */
-public class NumPlayersWindowController extends ControlledScreen implements Initializable{
+public class NumPlayersWindowController extends ControlledScreen 
+        implements Initializable{
     @FXML
     private ChoiceBox numberListCBox;
     @FXML
@@ -38,17 +39,31 @@ public class NumPlayersWindowController extends ControlledScreen implements Init
         numPlayerOptions.addAll(
                 2,
                 3,
-                4
+                4,
+                5
         );
         numberListCBox.setItems(numPlayerOptions);
         numberListCBox.getSelectionModel().selectFirst();
     }
     
     @FXML
-    private void startGame(ActionEvent event){
-        System.out.println("Starting game with "
-                + numberListCBox.getSelectionModel().getSelectedItem() +
-                " players");
+    private void startGame(ActionEvent event) throws IOException{
+        int numPlayers = (int)numberListCBox
+                .getSelectionModel()
+                .getSelectedItem();
+        switch(numPlayers){
+            case 2:
+                System.out.println("2 player game selected");
+                break;
+            case 3:
+                System.out.println("3 player game selected");
+                break;
+            case 4:
+                System.out.println("4 player game selected");
+                break;
+            case 5:
+                mainControl.loadPlaymat5();
+        }
     }
     
     @FXML

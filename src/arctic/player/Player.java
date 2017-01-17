@@ -17,6 +17,7 @@ import java.util.List;
 public class Player {
     
     private final PlayerType type;
+    private final int playerPosition;
     private final PlayerDeck deck;
     private final List<Card> hand;
     private final List<Card> discardPile;
@@ -24,9 +25,10 @@ public class Player {
     private int foodStore;
     private int medicineStore;
         
-    public Player(PlayerType type){
+    public Player(PlayerType type, int playerPosition){
         this.type = type;
-                
+        this.playerPosition = playerPosition;
+        
         deck = new PlayerDeck();
         deck.shuffle();
         
@@ -113,6 +115,10 @@ public class Player {
         medicineStore = 0;
     }
 
+    public int getPosition() {
+        return playerPosition;
+    }
+    
     public PlayerType getType() {
         return type;
     }

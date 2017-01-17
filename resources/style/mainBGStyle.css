@@ -12,3 +12,24 @@ and open the template in the editor.
     -fx-background-image: url("../images/snowBG.jpeg");
     -fx-background-size: 100% 100%; 
 }
+
+#testCard{
+    -fx-background-image: url("../images/CardBase.jpg");
+    -fx-background-size: 100% 100%; 
+}
+
+.playerArea{
+    -fx-background-color: red;
+}
+
+.marketDeck{
+    -fx-background-color: green;
+}
+
+.contestedDeck{
+    -fx-background-color: orange;
+}
+
+.textBox{
+    -fx-background-color: grey;
+}

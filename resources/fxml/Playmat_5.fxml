@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../style/mainBGStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arctic.gui.Playmat_5Controller">
+   <children>
+      <Pane layoutX="150.0" layoutY="786.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="266.0" prefWidth="170.0" styleClass="playerArea" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="150.0">
+         <children>
+            <ImageView fx:id="discardPile" fitHeight="266.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane layoutX="1600.0" layoutY="786.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="266.0" prefWidth="170.0" styleClass="playerArea" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="150.0">
+         <children>
+            <ImageView fx:id="drawPile" fitHeight="266.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <HBox fx:id="cpu1HandArea" alignment="BOTTOM_CENTER" layoutX="-75.0" layoutY="450.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="450.0" rotate="90.0" styleClass="playerArea" />
+      <HBox fx:id="cpu4HandArea" alignment="BOTTOM_CENTER" layoutX="1545.0" layoutY="463.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="450.0" rotate="-90.0" styleClass="playerArea" />
+      <HBox fx:id="cpu3HandArea" alignment="BOTTOM_CENTER" layoutX="1377.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="450.0" rotate="-170.0" styleClass="playerArea" />
+      <HBox fx:id="cpu2HandArea" alignment="BOTTOM_CENTER" layoutX="93.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="450.0" rotate="170.0" styleClass="playerArea" />
+      <HBox layoutX="623.0" layoutY="996.0" prefHeight="67.0" prefWidth="674.0" spacing="3.0" AnchorPane.bottomAnchor="15.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Button" />
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Button" />
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="220.0" text="Button" />
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Button" />
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Button" />
+         </children>
+      </HBox>
+      <Pane layoutX="875.0" layoutY="14.0" prefHeight="266.0" prefWidth="170.0" styleClass="contestedDeck">
+
+      </Pane>
+      <Pane layoutX="423.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="296.0" prefWidth="200.0" styleClass="marketDeck">
+
+      </Pane>
+      <Pane layoutX="658.0" layoutY="169.0" prefHeight="296.0" prefWidth="200.0" styleClass="marketDeck">
+
+      </Pane>
+      <Pane layoutX="1064.0" layoutY="169.0" prefHeight="296.0" prefWidth="200.0" styleClass="marketDeck">
+
+      </Pane>
+      <Pane layoutX="1300.0" layoutY="169.0" prefHeight="296.0" prefWidth="200.0" styleClass="marketDeck">
+
+      </Pane>
+      <Pane layoutX="300.0" layoutY="478.0" prefHeight="296.0" prefWidth="200.0" styleClass="marketDeck">
+
+      </Pane>
+      <Pane layoutX="1400.0" layoutY="478.0" prefHeight="296.0" prefWidth="200.0" styleClass="marketDeck">
+
+      </Pane>
+      <Pane layoutX="550.0" layoutY="478.0" prefHeight="296.0" prefWidth="200.0" styleClass="marketDeck">
+
+      </Pane>
+      <Pane layoutX="1170.0" layoutY="478.0" prefHeight="296.0" prefWidth="200.0" styleClass="marketDeck">
+
+      </Pane>
+      <Pane layoutX="790.0" layoutY="511.0" prefHeight="231.0" prefWidth="340.0" styleClass="textBox">
+         <children>
+            <Label layoutX="134.0" layoutY="102.0" prefHeight="27.0" prefWidth="73.0" text="Text Box">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <HBox fx:id="humanHandArea" alignment="BOTTOM_CENTER" layoutX="335.0" layoutY="778.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="1250.0" styleClass="playerArea" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="335.0" />
+   </children>
+</AnchorPane>

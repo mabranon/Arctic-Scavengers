@@ -18,7 +18,7 @@ import java.util.Random;
  *
  * @author AppleGrocer
  */
-public class Game {
+public class GameModel {
 
     private final int numPlayers;
     private final Board board;
@@ -26,20 +26,28 @@ public class Game {
     private Player initiatorPlayer;
     private Player currentPlayer;
 
-    public Game(int numPlayers) {
+    public GameModel(int numPlayers) {
         this.numPlayers = numPlayers;
 
         board = new Board(this.numPlayers);
 
         playerList = new ArrayList<>();
-        playerList.add(new Player(PlayerType.HUMAN));
-        for (int i = 0; i < this.numPlayers - 1; i++) {
-            playerList.add(new Player(PlayerType.CPU));
+        playerList.add(new Player(PlayerType.HUMAN, 0));
+        for (int i = 1; i < this.numPlayers; i++) {
+            playerList.add(new Player(PlayerType.CPU, i));
         }
 
         // randomly picks first initiator
         initiatorPlayer = playerList.get(new Random().nextInt(numPlayers));
         currentPlayer = initiatorPlayer;
+    }
+    
+    public Player getCurrentPlayer(){
+        return currentPlayer;
+    }
+    
+    public void drawNewPlayerHand(Player player){
+        player.drawNewHand();
     }
 
     /**
@@ -153,7 +161,7 @@ public class Game {
      * @param player
      * @return next player in turn order
      */
-    private Player nextPlayer(Player player) {
-        return playerList.get(playerList.indexOf(player) + 1 % numPlayers);
+    public Player nextPlayer(Player player) {
+        return playerList.get((playerList.indexOf(player) + 1) % numPlayers);
     }
 }
